@@ -1,5 +1,5 @@
-import AnimatedPage from "@/components/common/AnimatedPage";
-import SEO from "@/components/common/SEO";
+import AnimatedPage from "@/app/components/common/AnimatedPage";
+import SEO from "@/app/components/common/SEO";
 
 export default function TeamPage() {
   return (

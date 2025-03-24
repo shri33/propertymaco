@@ -1,39 +1,46 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const features = [
-  {
-    title: "Fast Cash Offers",
-    description: "Close on your timeline with no hidden fees.",
-  },
-  {
-    title: "No Repairs Needed",
-    description: "We buy houses in any condition, saving you time & money.",
-  },
-  {
-    title: "Local Expertise",
-    description: "We understand the local market & provide fair offers.",
-  },
-];
-
-export default function FeatureSection() {
+export default function HeroSection() {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="py-12 bg-gray-50"
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="bg-[url('/images/hero.jpg')] bg-cover bg-center text-white py-32 px-4 relative"
     >
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6">Why Choose PropertyMaco?</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {features.map((feature, idx) => (
-            <div key={idx} className="bg-white shadow p-6 rounded w-full md:w-1/3">
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-700">{feature.description}</p>
-            </div>
-          ))}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+      <div className="container mx-auto relative z-10">
+        <div className="max-w-2xl">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Sell Your House Fast with PropertyMaco
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg mb-8"
+          >
+            We buy houses in any condition. No repairs, no hidden fees, and a quick closing on your timeline.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <Link href="/contact">
+              <span className="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-md inline-block transition duration-300 cursor-pointer">
+                Get Your Cash Offer
+              </span>
+            </Link>
+          </motion.div>
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 }

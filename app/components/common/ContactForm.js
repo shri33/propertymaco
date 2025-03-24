@@ -8,7 +8,7 @@ export default function ContactForm() {
     phone: "",
     email: "",
     address: "",
-    message: "",
+    howCanWeHelp: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -18,70 +18,90 @@ export default function ContactForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    if (res.ok) setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) setSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded shadow-md">
-      <div className="flex gap-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-2 gap-4">
         <input
           type="text"
           name="firstName"
           placeholder="First Name"
+          value={formData.firstName}
           onChange={handleChange}
           required
-          className="border p-2 w-1/2"
+          className="p-3 border border-gray-300 rounded w-full text-gray-700"
         />
         <input
           type="text"
           name="lastName"
           placeholder="Last Name"
+          value={formData.lastName}
           onChange={handleChange}
           required
-          className="border p-2 w-1/2"
+          className="p-3 border border-gray-300 rounded w-full text-gray-700"
         />
       </div>
-      <input
-        type="text"
-        name="phone"
-        placeholder="Phone Number"
-        onChange={handleChange}
-        required
-        className="border p-2 w-full"
-      />
+
       <input
         type="email"
         name="email"
-        placeholder="Email"
+        placeholder="Email Address"
+        value={formData.email}
         onChange={handleChange}
         required
-        className="border p-2 w-full"
+        className="p-3 border border-gray-300 rounded w-full text-gray-700"
       />
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        value={formData.phone}
+        onChange={handleChange}
+        required
+        className="p-3 border border-gray-300 rounded w-full text-gray-700"
+      />
+
       <input
         type="text"
         name="address"
-        placeholder="Property Address"
+        placeholder="Address"
+        value={formData.address}
         onChange={handleChange}
-        className="border p-2 w-full"
+        required
+        className="p-3 border border-gray-300 rounded w-full text-gray-700"
       />
+
       <textarea
-        name="message"
-        placeholder="Message (Optional)"
+        name="howCanWeHelp"
+        placeholder="How can we help?"
+        value={formData.howCanWeHelp}
         onChange={handleChange}
-        className="border p-2 w-full"
+        required
+        className="p-3 border border-gray-300 rounded w-full text-gray-700"
       />
+
       <button
         type="submit"
-        className="bg-primary text-white px-4 py-2 rounded hover:opacity-90"
+        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 w-full"
       >
         Submit
       </button>
-      {submitted && <p className="text-green-600">Thank you! We'll be in touch soon.</p>}
+
+      {submitted && (
+        <p className="text-green-600 text-center">Thank you! Your message has been sent.</p>
+      )}
     </form>
   );
 }
