@@ -5,10 +5,14 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
-        <div className="container mx-auto px-4 md:flex md:items-center">
+      <section
+        className="relative text-white py-16 bg-cover bg-center"
+        style={{ backgroundImage: "url('/hero.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-blue-900 bg-opacity-75"></div>
+        <div className="container mx-auto px-4 md:flex md:items-center relative z-10">
           <div className="md:w-1/2 mb-8 md:mb-0">
-           <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               WE BUY HOUSES IN <span className="block mt-2">FLORIDA</span>
             </h1>
             <p className="text-xl mb-6">
@@ -19,7 +23,7 @@ export default function Home() {
               probate, behind on payments, bad tenants, and more.
             </p>
             <div className="flex items-center mb-4">
-              <img src="/bbb-white .png" alt="bbb-white" className="h-25" />
+              <img src="/bbb-white.png" alt="bbb-white" className="h-25" />
             </div>
             <Link href="/contact">
               <span className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
@@ -239,7 +243,9 @@ export default function Home() {
             <div className="border border-gray-200 p-6 rounded-lg">
               <div className="font-bold text-xl text-blue-600 mb-2">Step 2</div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">WE PRESENT AN OFFER</h3>
-              <p className="text-gray-700">We'll make you a fair cash offer on your property.</p>
+              <p className="text-gray-700">
+                We'll make you a fair cash offer on your property.
+              </p>
             </div>
             <div className="border border-gray-200 p-6 rounded-lg">
               <div className="font-bold text-xl text-blue-600 mb-2">Step 3</div>
@@ -291,4 +297,4 @@ export default function Home() {
       </section>
     </div>
   );
-} 
+}
