@@ -8,6 +8,13 @@ export default function Home() {
       <section className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
         <div className="container mx-auto px-4 md:flex md:items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
+            {/* Logo */}
+            <img
+              src="/images/Logo-01.png"
+              alt="PropertyMaco Logo"
+              className="w-48 h-auto mb-6"
+            />
+
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               WE BUY HOUSES IN <span className="block mt-2">FLORIDA</span>
             </h1>
@@ -15,8 +22,8 @@ export default function Home() {
               Sell your house AS-IS. No fees. Any condition.
             </p>
             <p className="mb-6">
-              We buy houses and properties in tough situations, like: foreclosure, divorce, probate,
-              behind on payments, bad tenants, and more.
+              We buy houses and properties in tough situations, like: foreclosure, divorce,
+              probate, behind on payments, bad tenants, and more.
             </p>
             <div className="flex items-center mb-4">
               <img src="/images/bbb-rating.png" alt="BBB Rating" className="h-12" />
@@ -27,6 +34,7 @@ export default function Home() {
               </span>
             </Link>
           </div>
+
           <div className="md:w-1/2 bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
               GET YOUR CASH OFFER!
@@ -34,7 +42,12 @@ export default function Home() {
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name*</label>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    First Name*
+                  </label>
                   <input
                     type="text"
                     id="firstName"
@@ -43,7 +56,12 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name*</label>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Last Name*
+                  </label>
                   <input
                     type="text"
                     id="lastName"
@@ -54,7 +72,12 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number*</label>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Phone Number*
+                  </label>
                   <input
                     type="tel"
                     id="phone"
@@ -63,7 +86,12 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email*</label>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Email*
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -73,7 +101,12 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <label htmlFor="property" className="block text-sm font-medium text-gray-700">Property Address*</label>
+                <label
+                  htmlFor="property"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Property Address*
+                </label>
                 <input
                   type="text"
                   id="property"
@@ -82,7 +115,12 @@ export default function Home() {
                 />
               </div>
               <div>
-                <label htmlFor="hear" className="block text-sm font-medium text-gray-700">Where did you hear about us?*</label>
+                <label
+                  htmlFor="hear"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Where did you hear about us?*
+                </label>
                 <select
                   id="hear"
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3"
@@ -128,7 +166,11 @@ export default function Home() {
                 WE ARE A FLORIDA CASH HOME BUYER YOU CAN TRUST
               </h2>
               <p className="text-gray-700 mb-6">
-                PropertyMaco is a professional home buying company. We work with homeowners to provide fast and fair cash offers for their home. We don't care about the condition of your property — we want to buy it no matter what state it's in. No repairs, no real estate agent fees, no inspections, no important payments needed, or what your credit score is like.
+                PropertyMaco is a professional home buying company. We work with homeowners to
+                provide fast and fair cash offers for their home. We don't care about the condition
+                of your property — we want to buy it no matter what state it's in. No repairs, no
+                real estate agent fees, no inspections, no important payments needed, or what your
+                credit score is like.
               </p>
               <Link href="/contact">
                 <span className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
@@ -157,7 +199,9 @@ export default function Home() {
                 We'll make your comfort a priority.
               </h3>
               <p className="text-gray-700">
-                We'll keep the sale process as stress-free as possible. When you request a no-obligation cash offer from PropertyMaco through our website, we'll guide you through each step.
+                We'll keep the sale process as stress-free as possible. When you request a
+                no-obligation cash offer from PropertyMaco through our website, we'll guide you
+                through each step.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -166,7 +210,8 @@ export default function Home() {
                 Your offer is 100% unique to you.
               </h3>
               <p className="text-gray-700">
-                Each offer reflects your specific needs and represents the best possible value for your property, taking all factors into appropriate selling at their value.
+                Each offer reflects your specific needs and represents the best possible value for
+                your property, taking all factors into appropriate selling at their value.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -175,7 +220,8 @@ export default function Home() {
                 We proudly back all offers.
               </h3>
               <p className="text-gray-700">
-                Our company backs every offer. We guarantee you a smooth property transaction process. This means no surprises for you, just as we promised at the very beginning.
+                Our company backs every offer. We guarantee you a smooth property transaction
+                process. This means no surprises for you, just as we promised at the very beginning.
               </p>
             </div>
           </div>
@@ -193,21 +239,21 @@ export default function Home() {
               <div className="font-bold text-xl text-blue-600 mb-2">Step 1</div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">CALL US & CHAT</h3>
               <p className="text-gray-700">
-                Tell us about your property and we'll make a fast cash offer on the phone, fill out our online form, or text us directly.
+                Tell us about your property and we'll make a fast cash offer on the phone, fill out
+                our online form, or text us directly.
               </p>
             </div>
             <div className="border border-gray-200 p-6 rounded-lg">
               <div className="font-bold text-xl text-blue-600 mb-2">Step 2</div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">WE PRESENT AN OFFER</h3>
-              <p className="text-gray-700">
-                We'll make you a fair cash offer on your property.
-              </p>
+              <p className="text-gray-700">We'll make you a fair cash offer on your property.</p>
             </div>
             <div className="border border-gray-200 p-6 rounded-lg">
               <div className="font-bold text-xl text-blue-600 mb-2">Step 3</div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">CLOSE AND GET PAID</h3>
               <p className="text-gray-700">
-                Choose the closing date that works for you, and we'll handle the rest. Get your cash in as little as 7 days.
+                Choose the closing date that works for you, and we'll handle the rest. Get your cash
+                in as little as 7 days.
               </p>
             </div>
           </div>
@@ -221,7 +267,9 @@ export default function Home() {
             VIDEO REVIEWS
           </h2>
           <p className="text-center text-gray-700 mb-8">
-            We are PropertyMaco, and we're proud of the extraordinary things our clients say about their experience selling to us. These are truly real-life testimonials, and we truly proudly KC to verify these are definitely no scripts but warm heartfelt reviews.
+            We are PropertyMaco, and we're proud of the extraordinary things our clients say about
+            their experience selling to us. These are truly real-life testimonials, and we truly
+            proudly KC to verify these are definitely no scripts but warm heartfelt reviews.
           </p>
           <div className="aspect-w-16 aspect-h-9">
             <iframe
@@ -251,3 +299,4 @@ export default function Home() {
     </div>
   );
 }
+
