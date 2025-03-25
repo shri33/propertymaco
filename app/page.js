@@ -8,14 +8,7 @@ export default function Home() {
       <section className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
         <div className="container mx-auto px-4 md:flex md:items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            {/* Logo */}
-            <img
-              src="/images/Logo-01.png"
-              alt="PropertyMaco Logo"
-              className="w-48 h-auto mb-6"
-            />
-
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+           <h1 className="text-4xl md:text-5xl font-bold mb-4">
               WE BUY HOUSES IN <span className="block mt-2">FLORIDA</span>
             </h1>
             <p className="text-xl mb-6">
@@ -26,7 +19,7 @@ export default function Home() {
               probate, behind on payments, bad tenants, and more.
             </p>
             <div className="flex items-center mb-4">
-              <img src="/images/bbb-rating.png" alt="BBB Rating" className="h-12" />
+              <img src="/bbb-white .png" alt="bbb-white" className="h-25" />
             </div>
             <Link href="/contact">
               <span className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
@@ -149,10 +142,10 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-xl font-bold text-gray-700 mb-6">AS SEEN ON:</h2>
           <div className="flex justify-center items-center space-x-8">
-            <img src="/images/fox-logo.png" alt="Fox" className="h-10" />
-            <img src="/images/cbs-logo.png" alt="CBS" className="h-10" />
-            <img src="/images/abc-logo.png" alt="ABC" className="h-10" />
-            <img src="/images/nbc-logo.png" alt="NBC" className="h-10" />
+            <img src="/FOX_logo.svg" alt="Fox" className="h-13" />
+            <img src="/CBS_logo.svg" alt="CBS" className="h-13" />
+            <img src="/ABC_logo.svg" alt="ABC" className="h-18" />
+            <img src="/NBC_logo.svg" alt="NBC" className="h-20" />
           </div>
         </div>
       </section>
@@ -298,5 +291,4 @@ export default function Home() {
       </section>
     </div>
   );
-}
-
+} 

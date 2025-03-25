@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image"; 
 import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
@@ -25,51 +26,56 @@ export default function Header() {
   }, [dropdownOpen]);
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-black shadow-md"> {/* Background changed to black */}
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/">
             <span className="flex items-center cursor-pointer">
-              <span className="text-blue-800 font-bold text-2xl">PropertyMaco</span>
+              <Image
+                src="/Logo.png"
+                alt="PropertyMaco Logo"
+                width={280} 
+                height={90} 
+                priority
+              />
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/about-us">
-              <span className="text-gray-700 hover:text-blue-800 transition-colors">About Us</span>
+              <span className="text-white hover:text-blue-400 transition-colors">About Us</span>
             </Link>
             <Link href="/our-team">
-              <span className="text-gray-700 hover:text-blue-800 transition-colors">Our Team</span>
+              <span className="text-white hover:text-blue-400 transition-colors">Our Team</span>
             </Link>
             <Link href="/reviews">
-              <span className="text-gray-700 hover:text-blue-800 transition-colors">Reviews</span>
+              <span className="text-white hover:text-blue-400 transition-colors">Reviews</span>
             </Link>
             <Link href="/locations">
-              <span className="text-gray-700 hover:text-blue-800 transition-colors">Locations</span>
+              <span className="text-white hover:text-blue-400 transition-colors">Locations</span>
             </Link>
 
             {/* "We Buy Houses" with Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <div className="flex items-center space-x-1">
-                {/* "We Buy Houses" → Navigates to the page */}
                 <Link href="/we-buy-houses">
-                  <span className="text-gray-700 hover:text-blue-800 transition-colors cursor-pointer">
+                  <span className="text-white hover:text-blue-400 transition-colors cursor-pointer">
                     We Buy Houses
                   </span>
                 </Link>
 
-                {/* Arrow Button → Toggles Dropdown */}
+                {/* Arrow Button */}
                 <button
                   onClick={(e) => {
-                    e.preventDefault(); // Prevent navigation
+                    e.preventDefault();
                     setDropdownOpen(!dropdownOpen);
                   }}
                   className="focus:outline-none"
                 >
                   <svg
-                    className={`w-4 h-4 text-black transition-transform duration-200 ${
+                    className={`w-4 h-4 text-white transition-transform duration-200 ${
                       dropdownOpen ? "rotate-180" : "rotate-0"
                     }`}
                     xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +90,7 @@ export default function Header() {
 
               {/* Dropdown Menu */}
               {dropdownOpen && (
-                <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                <div className="absolute left-0 mt-2 w-56 bg-black border border-gray-700 rounded-md shadow-lg z-50">
                   <ul className="py-2">
                     {[
                       { name: "Avoiding Foreclosure", link: "/avoiding-foreclosure" },
@@ -96,11 +102,11 @@ export default function Header() {
                     ].map((item) => (
                       <li key={item.link}>
                         <Link href={item.link} onClick={() => setDropdownOpen(false)}>
-                          <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                          <span className="block px-4 py-2 text-white hover:bg-blue-500 cursor-pointer">
                             {item.name}
                           </span>
                         </Link>
-                      </li>
+                      </li>                            
                     ))}
                   </ul>
                 </div>
@@ -110,8 +116,8 @@ export default function Header() {
             {/* Contact & Phone */}
             <div className="ml-4 flex items-center">
               <div className="mr-2">
-                <p className="text-gray-500 text-xs">Available 24/7</p>
-                <p className="text-blue-800 font-bold">(239) 990-5070</p>
+                <p className="text-gray-400 text-xs">Available 24/7</p>
+                <p className="text-red-500 font-bold">(239) 990-5070</p>
               </div>
               <Link href="/contact">
                 <span className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
