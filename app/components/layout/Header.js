@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
@@ -26,7 +26,8 @@ export default function Header() {
   }, [dropdownOpen]);
 
   return (
-    <header className="bg-black shadow-md"> {/* Background changed to black */}
+    <header className="bg-[#000000] shadow-md">
+      {/* Header Background: Black (#000000) */}
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -35,8 +36,8 @@ export default function Header() {
               <Image
                 src="/Logo.png"
                 alt="PropertyMaco Logo"
-                width={280} 
-                height={90} 
+                width={280}
+                height={90}
                 priority
               />
             </span>
@@ -65,7 +66,6 @@ export default function Header() {
                     We Buy Houses
                   </span>
                 </Link>
-
                 {/* Arrow Button */}
                 <button
                   onClick={(e) => {
@@ -106,7 +106,7 @@ export default function Header() {
                             {item.name}
                           </span>
                         </Link>
-                      </li>                            
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -116,7 +116,7 @@ export default function Header() {
             {/* Contact & Phone */}
             <div className="ml-4 flex items-center">
               <div className="mr-2">
-                <p className="text-gray-400 text-xs">Available 24/7</p>
+                <p className="text-blue-400 text-xs">Available 24/7</p>
                 <p className="text-red-500 font-bold">(239) 990-5070</p>
               </div>
               <Link href="/contact">
