@@ -27,7 +27,17 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="mt-4 flex flex-col">
               <p className="text-base mb-1">Available 24/7</p>
-              <p className="text-xl font-bold mb-2">(888) 719-9158</p>
+              {/* Phone Row with Bigger Icon & Text */}
+              <div className="flex items-center mb-2">
+                <Image
+                  src="/phone-icon.png" // Replace with your phone icon path
+                  alt="Phone Icon"
+                  width={32}
+                  height={32}
+                  className="mr-2"
+                />
+                <p className="text-2xl font-bold">(888) 719-9158</p>
+              </div>
             </div>
 
             {/* Social Icons */}
