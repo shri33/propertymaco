@@ -17,7 +17,7 @@ export default function Footer() {
                 <Image
                   src="/Logo.png"      // Replace with your actual logo path
                   alt="PropertyMaco Logo"
-                  width={180}
+                  width={200}
                   height={80}
                   priority
                 />
