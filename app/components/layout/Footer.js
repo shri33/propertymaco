@@ -1,5 +1,8 @@
 // components/layout/Footer.js
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,15 +11,26 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start mb-8">
           {/* Logo and Contact */}
           <div className="mb-6 md:mb-0">
+            {/* Logo (same style as header) */}
             <Link href="/">
-              <span className="font-bold text-2xl cursor-pointer">
-                PropertyMaco
+              <span className="flex items-center cursor-pointer bg-white p-1 rounded">
+                <Image
+                  src="/Logo.png"      // Replace with your actual logo path
+                  alt="PropertyMaco Logo"
+                  width={180}
+                  height={80}
+                  priority
+                />
               </span>
             </Link>
+
+            {/* Contact Info */}
             <div className="mt-4 flex flex-col">
-              <p className="text-sm mb-1">Available 24/7</p>
-              <p className="text-lg font-bold mb-2">(888) 719-9158</p>
+              <p className="text-base mb-1">Available 24/7</p>
+              <p className="text-xl font-bold mb-2">(888) 719-9158</p>
             </div>
+
+            {/* Social Icons */}
             <div className="flex space-x-2 mt-2">
               <a href="#" aria-label="Facebook" className="text-white hover:text-gray-300">
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -33,8 +47,8 @@ export default function Footer() {
 
           {/* Connect via text */}
           <div className="mb-6 md:mb-0">
-            <p className="text-sm font-bold mb-2">Connect via text:</p>
-            <p className="text-sm">
+            <p className="text-base font-bold mb-2">Connect via text:</p>
+            <p className="text-base">
               <a
                 href="#"
                 target="_blank"
@@ -44,7 +58,7 @@ export default function Footer() {
                 https://propertymaco.h.trustco.ai
               </a>
             </p>
-            <p className="text-sm mt-2">
+            <p className="text-base mt-2">
               Messaging T&Cs:{" "}
               <a
                 href="#"
@@ -55,7 +69,7 @@ export default function Footer() {
                 https://propertymaco.h.trustco.ai/#termsArea
               </a>
             </p>
-            <p className="text-sm mt-2">
+            <p className="text-base mt-2">
               Messaging Privacy Policy:{" "}
               <a
                 href="#"
@@ -69,7 +83,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-2 text-sm">
+          <div className="space-y-2 text-base">
             <Link href="/about-us">
               <span className="block hover:underline cursor-pointer">About Us</span>
             </Link>

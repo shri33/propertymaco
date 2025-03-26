@@ -26,17 +26,16 @@ export default function Header() {
   }, [dropdownOpen]);
 
   return (
-    <header className="bg-[#000000] shadow-md">
-      {/* Header Background: Black (#000000) */}
+    <header className="bg-black shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+        <div className="flex items-center py-2">
+          {/* Logo with white background */}
           <Link href="/">
-            <span className="flex items-center cursor-pointer">
+            <span className="flex items-center cursor-pointer bg-white p-1 rounded">
               <Image
                 src="/Logo.png"
                 alt="PropertyMaco Logo"
-                width={280}
+                width={250}
                 height={90}
                 priority
               />
@@ -44,25 +43,33 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center ml-18 space-x-10">
             <Link href="/about-us">
-              <span className="text-white hover:text-blue-400 transition-colors">About Us</span>
+              <span className="text-white hover:text-blue-400 text-lg transition-colors">
+                About Us
+              </span>
             </Link>
             <Link href="/our-team">
-              <span className="text-white hover:text-blue-400 transition-colors">Our Team</span>
+              <span className="text-white hover:text-blue-400 text-lg transition-colors">
+                Our Team
+              </span>
             </Link>
             <Link href="/reviews">
-              <span className="text-white hover:text-blue-400 transition-colors">Reviews</span>
+              <span className="text-white hover:text-blue-400 text-lg transition-colors">
+                Reviews
+              </span>
             </Link>
             <Link href="/locations">
-              <span className="text-white hover:text-blue-400 transition-colors">Locations</span>
+              <span className="text-white hover:text-blue-400 text-lg transition-colors">
+                Locations
+              </span>
             </Link>
 
             {/* "We Buy Houses" with Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <div className="flex items-center space-x-1">
                 <Link href="/we-buy-houses">
-                  <span className="text-white hover:text-blue-400 transition-colors cursor-pointer">
+                  <span className="text-white hover:text-blue-400 text-lg transition-colors cursor-pointer">
                     We Buy Houses
                   </span>
                 </Link>
@@ -83,7 +90,12 @@ export default function Header() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
               </div>
@@ -102,7 +114,7 @@ export default function Header() {
                     ].map((item) => (
                       <li key={item.link}>
                         <Link href={item.link} onClick={() => setDropdownOpen(false)}>
-                          <span className="block px-4 py-2 text-white hover:bg-blue-500 cursor-pointer">
+                          <span className="block px-4 py-2 text-white hover:bg-blue-500 cursor-pointer text-sm">
                             {item.name}
                           </span>
                         </Link>
@@ -114,10 +126,21 @@ export default function Header() {
             </div>
 
             {/* Contact & Phone */}
-            <div className="ml-4 flex items-center">
-              <div className="mr-2">
-                <p className="text-blue-400 text-xs">Available 24/7</p>
-                <p className="text-red-500 font-bold">(239) 990-5070</p>
+            <div className="flex items-center ml-10 space-x-12">
+              <div className="text-right">
+                {/* Increase the font size here */}
+                <p className="text-blue-400 text-sm">Available 24/7</p>
+                <div className="flex items-center justify-end">
+                  {/* Phone Icon */}
+                  <Image
+                    src="/phone-icon.png"
+                    alt="Phone Icon"
+                    width={16}
+                    height={16}
+                    className="mr-1"
+                  />
+                  <p className="text-red-500 font-bold">(239) 990-5070</p>
+                </div>
               </div>
               <Link href="/contact">
                 <span className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium transition-colors">

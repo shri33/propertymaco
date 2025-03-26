@@ -136,7 +136,7 @@ export default function ContactSection() {
 
             {/* BBB White Logo */}
             <img
-              src="/bbb-white .png"
+              src="/bbb-white.png"
               alt="bbb-white"
               className="h-12 w-auto"
             />
