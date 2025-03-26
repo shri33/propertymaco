@@ -170,17 +170,47 @@ export default function Home() {
       </section>
 
       {/* ===================== AS SEEN ON SECTION ===================== */}
-      <section className="bg-gray-100 py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center space-x-8">
-            <h2 className="text-xl font-bold text-gray-700">AS SEEN ON:</h2>
-            <Image src="/FOX_logo.svg" alt="Fox" width={90} height={90} className="h-13" />
-            <Image src="/CBS_logo.svg" alt="CBS" width={95} height={90} className="h-13" />
-            <Image src="/ABC_logo.svg" alt="ABC" width={80} height={90} className="h-18" />
-            <Image src="/NBC_logo.svg" alt="NBC" width={90} height={100} className="h-20" />
-          </div>
-        </div>
-      </section>
+      <section className="bg-gray-100 py-6">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-row-reverse items-center justify-center space-x-8 space-x-reverse">
+      {/* Logos from left to right, but reversed by flex-row-reverse */}
+      <Image
+        src="/NBC_logo.svg"
+        alt="NBC"
+        width={120}
+        height={130}
+        className="object-contain"
+      />
+      <Image
+        src="/ABC_logo.svg"
+        alt="ABC"
+        width={110}
+        height={110}
+        className="object-contain"
+      />
+      <Image
+        src="/CBS_logo.svg"
+        alt="CBS"
+        width={110}
+        height={110}
+        className="object-contain"
+      />
+      <Image
+        src="/FOX_logo.svg"
+        alt="Fox"
+        width={130}
+        height={130}
+        className="object-contain"
+      />
+
+      {/* Heading on the right (due to flex-row-reverse) */}
+      <h2 className="text-5xl font-bold text-gray-900">
+        AS SEEN ON:
+      </h2>
+    </div>
+  </div>
+</section>
+
 
       {/* ===================== TRUST SECTION ===================== */}
       <section className="py-12 bg-white">
