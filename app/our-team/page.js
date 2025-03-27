@@ -1,116 +1,190 @@
+"use client";
+import { useState } from "react";
 import AnimatedPage from "@/app/components/common/AnimatedPage";
 import SEO from "@/app/components/common/SEO";
+import Image from "next/image";
 
-const teamMembers = [
+// Example array for otherTeamMembers with a 'description' field for the modal
+const otherTeamMembers = [
   {
-    name: "John Smith",
-    role: "Founder & CEO",
-    image: "/images/team1.jpg",
-    description:
-      "John has over 15 years of experience in real estate and is passionate about helping homeowners find the best solutions for their situations.",
+    role: "Funding Coordinator",
+    image: "/team4.jpg",
+    description: "Martin grew up in the son of a postal worker in Mansfield, OH...",
   },
   {
-    name: "Jane Doe",
+    role: "Transaction Manager",
+    image: "/team5.jpg",
+    description: "Handles day-to-day transaction details and ensures smooth closings.",
+  },
+  {
     role: "Acquisitions Manager",
-    image: "/images/team2.jpg",
-    description:
-      "Jane specializes in property acquisitions and ensures smooth transactions for all our clients.",
+    image: "/team6.jpg",
+    description: "Oversees property acquisitions and negotiates fair deals for homeowners.",
   },
   {
-    name: "Mark Johnson",
-    role: "Finance Coordinator",
-    image: "/images/team3.jpg",
-    description:
-      "Mark manages financial operations and makes sure everything runs efficiently in the business.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Sarah Williams",
-    review: "PropertyMaco made selling my house so easy and stress-free. Highly recommend their team!",
+    role: "Senior Acquisitions Specialist",
+    image: "/team7.jpg",
+    description: "Expert in evaluating properties, offering fair prices, and closing quickly.",
   },
   {
-    name: "David Brown",
-    review: "A seamless process from start to finish. The team was professional and supportive throughout!",
+    role: "Acquisitions Specialist",
+    image: "/team8.jpg",
+    description: "Works closely with sellers to provide an AS-IS cash offer with no hassles.",
   },
   {
-    name: "Emily Clark",
-    review: "Great experience working with PropertyMaco! They provided excellent service and guidance.",
+    role: "Acquisitions Specialist",
+    image: "/team9.jpg",
+    description: "Ensures a streamlined selling experience for homeowners across the region.",
+  },
+  {
+    role: "Acquisitions Specialist",
+    image: "/team10.jpg",
+    description: "Coordinates property visits and delivers transparent, stress-free offers.",
+  },
+  {
+    role: "Transaction Coordinator",
+    image: "/team11.jpg",
+    description: "Manages paperwork and closing details to keep everything on schedule.",
+  },
+  {
+    role: "Transaction Coordinator",
+    image: "/team12.jpg",
+    description: "Assists in finalizing documents and ensuring a smooth handoff at closing.",
   },
 ];
 
 export default function TeamPage() {
+  const [selectedMember, setSelectedMember] = useState(null);
+
+  function handleMemberClick(member) {
+    setSelectedMember(member);
+  }
+
+  function handleCloseModal() {
+    setSelectedMember(null);
+  }
+
   return (
     <AnimatedPage>
       <SEO
         title="Our Team | PropertyMaco"
         description="Meet the dedicated professionals behind PropertyMaco."
       />
-      <div className="container mx-auto py-10 px-4 bg-black text-white">
-        <h1 className="text-3xl font-bold mb-4 text-center text-red-500">Our Team</h1>
-        <p className="mb-6 text-center text-gray-300">
-          At PropertyMaco, we believe in putting people first. Our dedicated team of
-          real estate professionals is here to guide you every step of the way, ensuring
-          a smooth and stress-free home selling experience.
-        </p>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="bg-gray-900 shadow-lg p-6 rounded-lg text-center transition-transform transform hover:scale-105"
+      {/* Hero Section */}
+      <section className="relative h-[40vh]">
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src="/hero.jpg"
+            alt="Hero Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
+        <div className="relative z-10 flex items-center justify-start h-full text-white text-left pl-48 pr-6">
+          <div className="max-w-xl">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Team</h1>
+            <p className="text-lg md:text-xl mb-6">
+              We have collectively decades of experience in real estate and we flat out get the job done. 
+              When someone decides to sell their house to us, they’re trusting our team to ensure a timely closing 
+              with no hassle and no surprises. Quite simply, we’re the best at what we do.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-md transition duration-300"
             >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-blue-500"
-              />
-              <h3 className="text-xl font-bold text-red-500">{member.name}</h3>
-              <p className="text-blue-400 font-semibold">{member.role}</p>
-              <p className="mt-2 text-sm text-gray-300">{member.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Forms Section */}
-        <div className="grid md:grid-cols-2 gap-6 mt-10">
-          {/* Left Contact Form */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold mb-4 text-red-500">Contact Us</h2>
-            <form className="space-y-4">
-              <input type="text" placeholder="Your Name" className="w-full p-2 border rounded bg-gray-700 text-white" />
-              <input type="email" placeholder="Your Email" className="w-full p-2 border rounded bg-gray-700 text-white" />
-              <textarea placeholder="Your Message" className="w-full p-2 border rounded h-24 bg-gray-700 text-white"></textarea>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded">Send Message</button>
-            </form>
-          </div>
-
-          {/* Right Contact Form */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold mb-4 text-red-500">Get in Touch</h2>
-            <form className="space-y-4">
-              <input type="text" placeholder="Full Name" className="w-full p-2 border rounded bg-gray-700 text-white" />
-              <input type="email" placeholder="Email Address" className="w-full p-2 border rounded bg-gray-700 text-white" />
-              <input type="text" placeholder="Phone Number" className="w-full p-2 border rounded bg-gray-700 text-white" />
-              <button className="bg-green-500 text-white px-4 py-2 rounded">Submit</button>
-            </form>
+              Get an Offer
+            </a>
           </div>
         </div>
+      </section>
+      {/* ===================== EDUARD CHEPURNOY SECTION ===================== */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+          {/* Left Column: Photo */}
+          <div className="md:w-1/3">
+            <Image
+              src="/eduard.jpg"
+              alt="Eduard Chepurnoy"
+              width={400}
+              height={400}
+              className="object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          {/* Right Column: Text */}
+          <div className="md:w-2/3 text-black">
+            <h1 className="text-4xl font-bold mb-2">Eduard Chepurnoy</h1>
+            <h2 className="text-2xl font-semibold mb-4">Owner/Operator</h2>
+            <p className="text-lg">
+              of PropertyMaco, brings extensive real estate expertise to every transaction.
+              Starting his career in 2011 during a challenging market recovery, Eduard has honed a
+              strategic approach focused on delivering efficient, AS-IS cash sales for homeowners
+              across the USA. His deep understanding of market dynamics and commitment to transparent,
+              professional service make PropertyMaco a trusted partner for those seeking a straightforward
+              and fair home-selling experience.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Testimonials Section */}
-        <div className="mt-10 bg-gray-900 p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-center text-red-500 mb-6">What Our Clients Say</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-800 p-4 rounded-lg shadow text-center">
-                <p className="text-gray-300 italic">"{testimonial.review}"</p>
-                <h3 className="mt-2 font-bold text-blue-400">- {testimonial.name}</h3>
+      {/* Meet The Rest of The Team */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-left text-black">Meet The Rest of The Team</h2>
+
+          {/* Example Row of Team Members */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {otherTeamMembers.map((member, idx) => (
+              <div
+                key={idx}
+                className="bg-[#0086bf] bg-opacity-90 rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer"
+                onClick={() => handleMemberClick(member)}
+              >
+                <Image
+                  src={member.image}
+                  alt={member.role}
+                  width={150}
+                  height={150}
+                  className="rounded-full object-cover"
+                />
+                <p className="mt-2 text-black text-center">{member.role}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ===================== MODAL (when a member is selected) ===================== */}
+{selectedMember && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+    {/* Modal Content */}
+    <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full flex flex-col md:flex-row pointer-events-auto">
+      {/* Close Button */}
+      <button
+        onClick={handleCloseModal}
+        className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+      >
+        ✕
+      </button>
+      {/* Left: Image (Same size as others) */}
+      <div className="md:w-1/2 flex-shrink-0 flex items-center justify-center">
+        <Image
+          src={selectedMember.image}
+          alt={selectedMember.role}
+          width={150}
+          height={150}
+          className="object-cover rounded-full"
+        />
       </div>
-    </AnimatedPage>
+      {/* Right: Info */}
+      <div className="md:w-1/2 p-4 text-black">
+        <h3 className="text-2xl font-bold mb-2">{selectedMember.role}</h3>
+        <p className="text-lg">{selectedMember.description}</p>
+      </div>
+    </div>
+  </div>
+)}
+</AnimatedPage>
   );
 }
