@@ -39,7 +39,7 @@ export default function LocationsPage() {
           />
         </div>
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        <div className="container mx-auto relative z-10 text-left pl-10 pr-6">
+        <div className="container mx-auto relative z-10 text-left pl-4 sm:pl-10 pr-4 sm:pr-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Locations</h1>
           <p className="text-lg max-w-2xl">
             Explore our comprehensive services all across the United States. At PropertyMaco, 

@@ -1,10 +1,9 @@
-"use client"; // Enable client-side features (e.g., animations)
-
+"use client";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactSection() {
-  // 5 Example Reviews (shortText & fullText)
+  // Example reviews data
   const reviews = [
     {
       name: "Galactic Stone",
@@ -43,28 +42,23 @@ export default function ContactSection() {
     },
   ];
 
-  // Current index of the displayed review
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // For toggling the "Read more" state of the current review
   const [expanded, setExpanded] = useState(false);
-
-  // For auto-sliding
   const intervalRef = useRef(null);
 
-  // Whenever currentIndex changes, reset expanded to false
+  // Reset expanded state when review changes
   useEffect(() => {
     setExpanded(false);
   }, [currentIndex]);
 
-  // Auto-play every 3 seconds
+  // Auto-play reviews every 3 seconds
   useEffect(() => {
     startAutoSlide();
     return stopAutoSlide;
-  }, [currentIndex]); // restarts interval on index change
+  }, [currentIndex]);
 
   const startAutoSlide = () => {
-    stopAutoSlide(); // clear any existing interval
+    stopAutoSlide();
     intervalRef.current = setInterval(() => {
       handleNext();
     }, 3000);
@@ -74,27 +68,31 @@ export default function ContactSection() {
     if (intervalRef.current) clearInterval(intervalRef.current);
   };
 
-  // Go to previous review
   const handlePrev = () => {
     stopAutoSlide();
     setCurrentIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
   };
 
-  // Go to next review
   const handleNext = () => {
     stopAutoSlide();
     setCurrentIndex((prev) => (prev + 1) % reviews.length);
   };
 
-  // Framer Motion variants for sliding in/out
+  // Framer Motion variants for slide transitions
   const variants = {
-    enter: { x: 300, opacity: 0 },  // start off to the right
-    center: { x: 0, opacity: 1 },   // center position
-    exit: { x: -300, opacity: 0 },  // slide out to the left
+    enter: { x: 300, opacity: 0 },
+    center: { x: 0, opacity: 1 },
+    exit: { x: -300, opacity: 0 },
   };
 
-  // Current review object
   const currentReview = reviews[currentIndex];
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Replace with your form submission logic
+    alert("Form submitted!");
+  };
 
   return (
     <section className="relative w-full bg-black text-white py-10 px-4">
@@ -106,10 +104,7 @@ export default function ContactSection() {
           preserveAspectRatio="none"
           viewBox="0 0 1200 120"
         >
-          <path
-            d="M1200 0L0 0 892.25 114.72 1200 0z"
-            fill="#2A9DF4" // Arc color
-          ></path>
+          <path d="M1200 0L0 0 892.25 114.72 1200 0z" fill="#2A9DF4"></path>
         </svg>
       </div>
 
@@ -117,37 +112,23 @@ export default function ContactSection() {
         <div className="flex flex-col md:flex-row gap-8">
           {/* LEFT COLUMN */}
           <div className="md:w-1/2 space-y-6">
-            {/* "PROPERTY MACO" heading with colors */}
             <h2 className="text-3xl font-bold">
               <span className="text-white">PROPERTY</span>{" "}
               <span className="text-red-600">MACO</span>
             </h2>
-
             <p>
-              “I need to sell my house fast”, “I need to sell my house cash,” or even
-              “should I sell my house cash” are all very common thoughts for the homeowners
-              we work with. Selling a house can seem a bit overwhelming. Just take the first
-              step and start with a chat. Either fill out the webform, or call us at{" "}
-              <a href="tel:888-713-9158" className="underline font-semibold">
-                888-713-9158
-              </a>
-              .
+              “I need to sell my house fast”, “I need to sell my house cash,” or even “should I sell my house cash” are all common thoughts for our homeowners. Selling a house can seem overwhelming—just take the first step and start with a chat. Either fill out the webform or call us at{" "}
+              <a href="tel:(239) 990-5070" className="underline font-semibold">
+              (239) 990-5070
+              </a>.
             </p>
+            <img src="/bbb-white.png" alt="BBB Logo" className="h-12 w-auto" />
 
-            {/* BBB White Logo */}
-            <img
-              src="/bbb-white.png"
-              alt="bbb-white"
-              className="h-12 w-auto"
-            />
-
-            {/* REVIEWS SLIDER (One at a time) */}
+            {/* Reviews Slider */}
             <div className="mt-6 relative w-full max-w-md h-64 mx-auto overflow-hidden">
               <h3 className="text-2xl font-bold mb-2">
                 What Our Customers Are Saying
               </h3>
-
-              {/* Arrows (outside box with negative margins) */}
               <button
                 className="absolute top-1/2 -left-8 transform -translate-y-1/2 bg-[#00bfa6] bg-opacity-70 hover:bg-opacity-90 text-white p-2 rounded-r"
                 onClick={handlePrev}
@@ -160,8 +141,6 @@ export default function ContactSection() {
               >
                 &gt;
               </button>
-
-              {/* AnimatePresence for slide transitions */}
               <div className="relative w-full h-full flex items-center justify-center">
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
@@ -173,11 +152,8 @@ export default function ContactSection() {
                     transition={{ duration: 0.5 }}
                     className="absolute w-full h-full flex flex-col bg-[#00bfa6]/10 rounded-lg p-4 shadow"
                   >
-                    {/* Top Row: Avatar/Name/Date + Google Icon */}
                     <div className="flex items-center justify-between mb-2">
-                      {/* Left: Avatar & Name/Date */}
                       <div className="flex items-center space-x-3">
-                        {/* "G" Circle or user icon */}
                         <div className="w-10 h-10 rounded-full bg-[#f4511e] flex items-center justify-center text-white font-bold">
                           G
                         </div>
@@ -190,15 +166,12 @@ export default function ContactSection() {
                           </p>
                         </div>
                       </div>
-                      {/* Right: Google Logo (optional) */}
                       <img
                         src="/google.png"
-                        alt="google"
+                        alt="Google Logo"
                         className="w-6 h-6"
                       />
                     </div>
-
-                    {/* Star Rating */}
                     <div className="flex items-center mb-2">
                       {[...Array(currentReview.rating)].map((_, starIndex) => (
                         <svg
@@ -211,13 +184,9 @@ export default function ContactSection() {
                         </svg>
                       ))}
                     </div>
-
-                    {/* Review Text (short or full) */}
                     <p className="text-white mb-2">
                       {expanded ? currentReview.fullText : currentReview.shortText}
                     </p>
-
-                    {/* Read more / Show less button */}
                     <button
                       className="text-blue-300 font-semibold"
                       onClick={() => setExpanded(!expanded)}
@@ -235,9 +204,9 @@ export default function ContactSection() {
             <h3 className="text-2xl font-bold mb-4 text-center">
               GET YOUR CASH OFFER!
             </h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold mb-1" htmlFor="firstName">
+                <label htmlFor="firstName" className="block text-sm font-semibold mb-1">
                   First Name (Required)
                 </label>
                 <input
@@ -248,7 +217,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold mb-1" htmlFor="lastName">
+                <label htmlFor="lastName" className="block text-sm font-semibold mb-1">
                   Last Name (Required)
                 </label>
                 <input
@@ -259,7 +228,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold mb-1" htmlFor="phone">
+                <label htmlFor="phone" className="block text-sm font-semibold mb-1">
                   Phone Number (Required)
                 </label>
                 <input
@@ -270,7 +239,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold mb-1" htmlFor="email">
+                <label htmlFor="email" className="block text-sm font-semibold mb-1">
                   Email (Required)
                 </label>
                 <input
@@ -281,10 +250,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label
-                  className="block text-sm font-semibold mb-1"
-                  htmlFor="propertyAddress"
-                >
+                <label htmlFor="propertyAddress" className="block text-sm font-semibold mb-1">
                   Property Address (Required)
                 </label>
                 <input
@@ -296,17 +262,10 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label
-                  className="block text-sm font-semibold mb-1"
-                  htmlFor="whereHear"
-                >
+                <label htmlFor="whereHear" className="block text-sm font-semibold mb-1">
                   Where did you hear about us? (Required)
                 </label>
-                <select
-                  id="whereHear"
-                  className="w-full border rounded p-2"
-                  required
-                >
+                <select id="whereHear" className="w-full border rounded p-2" required>
                   <option value="">Please Choose An Option</option>
                   <option value="Google">Google</option>
                   <option value="Facebook">Facebook</option>

@@ -74,7 +74,7 @@ export default function AvoidingForeclosurePage() {
         {/* Color Overlay */}
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
         {/* Text Content */}
-        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4">
+        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4 sm:px-8 md:px-20">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             AVOIDING FORECLOSURE
           </h1>
@@ -91,7 +91,7 @@ export default function AvoidingForeclosurePage() {
 
       {/* SECTION 1: Understanding the Basics of Selling Before Foreclosure */}
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Left Text Column */}
           <div className="md:w-1/2 text-black">
             <h2 className="text-3xl font-bold mb-4">
@@ -121,7 +121,7 @@ export default function AvoidingForeclosurePage() {
 
       {/* SECTION 2: Legal Considerations */}
       <section className="py-16 px-4" style={{ backgroundColor: "#0086bf", color: "black" }}>
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Left Image Column */}
           <div className="md:w-1/2">
             <Image
@@ -144,7 +144,7 @@ export default function AvoidingForeclosurePage() {
 
       {/* SECTION 3: Our Streamlined Process */}
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Left Text Column */}
           <div className="md:w-1/2 text-black">
             <h2 className="text-3xl font-bold mb-4">Our Streamlined Process</h2>
@@ -167,7 +167,7 @@ export default function AvoidingForeclosurePage() {
 
       {/* SECTION 4: Don’t Let Foreclosure Ruin Your Financial Future */}
       <section className="py-16 px-4" style={{ backgroundColor: "#0086bf", color: "black" }}>
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Left Image Column */}
           <div className="md:w-1/2">
             <Image
@@ -180,9 +180,7 @@ export default function AvoidingForeclosurePage() {
           </div>
           {/* Right Text Column */}
           <div className="md:w-1/2 text-black">
-            <h2 className="text-3xl font-bold mb-4">
-              Don’t Let Foreclosure Ruin Your Financial Future
-            </h2>
+            <h2 className="text-3xl font-bold mb-4">Don’t Let Foreclosure Ruin Your Financial Future</h2>
             <p className="mb-4">
               Foreclosure can severely impact your credit for years, making future financial recovery difficult. By selling your home to PropertyMaco, you can avoid these long-term repercussions, settle your mortgage balance, and potentially even secure some cash to help with your next steps. Contact our team today to discuss how we can help you turn a challenging situation into a fresh start.
             </p>
@@ -192,12 +190,10 @@ export default function AvoidingForeclosurePage() {
 
       {/* SECTION 5: Our Process: How We Expedite Your Home Transaction */}
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Left Text Column */}
           <div className="md:w-1/2 text-black">
-            <h2 className="text-3xl font-bold mb-4">
-              Our Process: How We Expedite Your Home Transaction
-            </h2>
+            <h2 className="text-3xl font-bold mb-4">Our Process: How We Expedite Your Home Transaction</h2>
             <p className="mb-4">
               At PropertyMaco, our streamlined home-buying process is designed to ensure a quick, hassle‑free sale. It all starts with a simple phone consultation. When you connect with our team, we arrange a brief chat to understand your situation and assess if we’re the right fit for your needs. If everything aligns, our experts will present you with an as‑is cash offer for your home.
               <br /><br />
@@ -219,10 +215,8 @@ export default function AvoidingForeclosurePage() {
 
       {/* SECTION 6: Don’t Let Foreclosure Ruin Your Financial Health */}
       <section className="py-16 px-12" style={{ backgroundColor: "#0086bf", color: "black" }}>
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Don’t Let Foreclosure Ruin Your Financial Health
-          </h2>
+        <div className="container mx-auto text-center px-4 sm:px-8 md:px-20">
+          <h2 className="text-3xl font-bold mb-4">Don’t Let Foreclosure Ruin Your Financial Health</h2>
           <p className="text-lg max-w-7xl mx-auto mb-6">
             Foreclosure can significantly damage your credit for years, making it challenging to recover financially. At PropertyMaco, we help you avoid foreclosure and settle your mortgage balance quickly. Our efficient, all‑cash approach may even leave you with extra funds to help start fresh. Contact our team today, and let’s discuss how we can turn a difficult situation into a smart financial decision.
           </p>
@@ -232,5 +226,3 @@ export default function AvoidingForeclosurePage() {
     </AnimatedPage>
   );
 }
-
-

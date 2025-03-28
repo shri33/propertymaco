@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import AnimatedPage from "@/app/components/common/AnimatedPage";
+import { useState, useRef, useEffect } from "react";
+import AnimatedPage from "@/app/components/common/AnimatedPage"; // Ensure this file exists
 import SEO from "@/app/components/common/SEO";
 import Image from "next/image";
 
@@ -82,12 +82,12 @@ export default function TeamPage() {
           />
         </div>
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        <div className="relative z-10 flex items-center justify-start h-full text-white text-left pl-48 pr-6">
+        <div className="relative z-10 flex items-center justify-start h-full text-white text-left pl-4 sm:pl-8 md:pl-44 pr-6">
           <div className="max-w-xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Team</h1>
             <p className="text-lg md:text-xl mb-6">
-              We have collectively decades of experience in real estate and we flat out get the job done. 
-              When someone decides to sell their house to us, they’re trusting our team to ensure a timely closing 
+              We have collectively decades of experience in real estate and we flat out get the job done.
+              When someone decides to sell their house to us, they’re trusting our team to ensure a timely closing
               with no hassle and no surprises. Quite simply, we’re the best at what we do.
             </p>
             <a
@@ -99,9 +99,10 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-      {/* ===================== EDUARD CHEPURNOY SECTION ===================== */}
+
+      {/* Eduard Chepurnoy Section */}
       <section className="py-12 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           {/* Left Column: Photo */}
           <div className="md:w-1/3">
             <Image
@@ -109,7 +110,7 @@ export default function TeamPage() {
               alt="Eduard Chepurnoy"
               width={400}
               height={400}
-              className="object-cover rounded-lg shadow-lg"
+              className="object-cover rounded-lg shadow-lg w-full"
             />
           </div>
           {/* Right Column: Text */}
@@ -132,9 +133,7 @@ export default function TeamPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-left text-black">Meet The Rest of The Team</h2>
-
-          {/* Example Row of Team Members */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-8">
             {otherTeamMembers.map((member, idx) => (
               <div
                 key={idx}
@@ -155,36 +154,32 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* ===================== MODAL (when a member is selected) ===================== */}
-{selectedMember && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-    {/* Modal Content */}
-    <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full flex flex-col md:flex-row pointer-events-auto">
-      {/* Close Button */}
-      <button
-        onClick={handleCloseModal}
-        className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-      >
-        ✕
-      </button>
-      {/* Left: Image (Same size as others) */}
-      <div className="md:w-1/2 flex-shrink-0 flex items-center justify-center">
-        <Image
-          src={selectedMember.image}
-          alt={selectedMember.role}
-          width={150}
-          height={150}
-          className="object-cover rounded-full"
-        />
-      </div>
-      {/* Right: Info */}
-      <div className="md:w-1/2 p-4 text-black">
-        <h3 className="text-2xl font-bold mb-2">{selectedMember.role}</h3>
-        <p className="text-lg">{selectedMember.description}</p>
-      </div>
-    </div>
-  </div>
-)}
-</AnimatedPage>
+      {/* Modal for Selected Team Member */}
+      {selectedMember && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+          <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full flex flex-col md:flex-row pointer-events-auto">
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+            >
+              ✕
+            </button>
+            <div className="md:w-1/2 flex-shrink-0 flex items-center justify-center">
+              <Image
+                src={selectedMember.image}
+                alt={selectedMember.role}
+                width={150}
+                height={150}
+                className="object-cover rounded-full"
+              />
+            </div>
+            <div className="md:w-1/2 p-4 text-black">
+              <h3 className="text-2xl font-bold mb-2">{selectedMember.role}</h3>
+              <p className="text-lg">{selectedMember.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
+    </AnimatedPage>
   );
 }

@@ -1,93 +1,113 @@
+"use client";
 import AnimatedPage from "@/app/components/common/AnimatedPage";
 import SEO from "@/app/components/common/SEO";
+import Image from "next/image";
 
-export default function PrivacyPolicyPage() {
+export default function InterpretationDefinitionsPage() {
   return (
     <AnimatedPage>
       <SEO
-        title="Privacy Policy | PropertyMaco"
-        description="Learn how PropertyMaco handles your personal data."
+        title="Interpretation and Definitions | PropertyMaco"
+        description="Learn the definitions and interpretation used in our Privacy Policy."
       />
-      <div className="container mx-auto py-10 px-4 text-white" style={{ backgroundColor: "#000000" }}>
-        <div className="grid grid-cols-3 gap-4">
-          {/* Contact Form on the Left */}
-          <div className="col-span-1 bg-gray-800 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold text-red-600 mb-4">Contact Us</h2>
-            <form>
-              <div className="mb-4">
-                <label className="block mb-2">Name</label>
-                <input type="text" className="w-full p-2 border border-gray-300 rounded" />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-2">Email</label>
-                <input type="email" className="w-full p-2 border border-gray-300 rounded" />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-2">Message</label>
-                <textarea className="w-full p-2 border border-gray-300 rounded" rows="4"></textarea>
-              </div>
-              <button className="bg-red-600 text-white px-4 py-2 rounded">Send</button>
-            </form>
-          </div>
-          
-          {/* Main Content */}
-          <div className="col-span-2">
-            <h1 className="text-3xl font-bold mb-4 text-red-600">Privacy Policy</h1>
-            <p className="mb-4">Last updated: March 20, 2024</p>
-            <p className="mb-4">
-              This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
-              information when You use the Service and tells You about Your privacy rights and how the law protects You.
+
+      {/* HERO SECTION */}
+      <section className="relative h-[80vh]">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src="/hero.jpg" // Replace with your desired image path
+            alt="Hero"
+            fill
+            className="object-cover"
+          />
+        </div>
+        {/* Blue Overlay */}
+        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-70"></div>
+        {/* Left-aligned white text overlay, vertically centered */}
+        <div className="absolute inset-0 flex items-center justify-start pl-48">
+          <div>
+            <h1 className="text-5xl font-bold text-white mb-4">Privacy Policy</h1>
+            <p className="text-lg text-white max-w-3xl">
+              Last updated: March 20, 2025
+              <br /><br />
+              This Privacy Policy describes our policies and procedures regarding the collection, use, and disclosure of your information when you access and use our Service, and it outlines your privacy rights and how the law protects you.
+              <br /><br />
+              By using our Service, you agree to the collection and use of your personal data in accordance with this Privacy Policy.
             </p>
-            <p className="mb-4">
-              We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection
-              and use of information in accordance with this Privacy Policy.
-            </p>
-            <h2 className="text-2xl font-semibold mt-6 mb-2 text-red-600">Interpretation and Definitions</h2>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Interpretation</h3>
-            <p className="mb-4">
-              The words of which the initial letter is capitalized have meanings defined under the following conditions. The
-              following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
-            </p>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Definitions</h3>
-            <ul className="list-disc list-inside mb-4">
-              <li><strong>Account:</strong> A unique account created for You to access our Service.</li>
-              <li><strong>Affiliate:</strong> An entity that controls, is controlled by, or is under common control with a party.</li>
-              <li><strong>Company:</strong> ("We", "Us", or "Our") refers to The Friendly Home Buyer.</li>
-              <li><strong>Cookies:</strong> Small files placed on Your device containing details of Your browsing history.</li>
-              <li><strong>Country:</strong> Florida, United States.</li>
-              <li><strong>Device:</strong> Any device that can access the Service, such as a computer or mobile phone.</li>
-              <li><strong>Personal Data:</strong> Any information that relates to an identified or identifiable individual.</li>
-              <li><strong>Service:</strong> The Website.</li>
-              <li><strong>Website:</strong> The Friendly Home Buyer, accessible from https://thefriendlyhomebuyer.com/</li>
-              <li><strong>You:</strong> The individual or company using the Service.</li>
-            </ul>
-            <h2 className="text-2xl font-semibold mt-6 mb-2 text-red-600">Use of Your Personal Data</h2>
-            <p className="mb-4">We may use Personal Data for the following purposes:</p>
-            <ul className="list-disc list-inside mb-4">
-              <li>To provide and maintain our Service</li>
-              <li>To manage Your Account</li>
-              <li>To contact You with updates</li>
-              <li>To provide You with marketing and promotional offers</li>
-              <li>To manage requests and inquiries</li>
-              <li>For business transfers and security compliance</li>
-            </ul>
           </div>
         </div>
-        
-        {/* Testimonials Section */}
-        <div className="mt-10 p-6 bg-gray-800 rounded-lg">
-          <h2 className="text-2xl font-semibold text-red-600 mb-4">What Our Buyers Say</h2>
-          <div className="space-y-4">
-            <div className="bg-gray-700 p-4 rounded">
-              <p className="text-lg">"The process was smooth and stress-free. Highly recommend!"</p>
-              <p className="text-sm text-gray-400">- John Doe</p>
-            </div>
-            <div className="bg-gray-700 p-4 rounded">
-              <p className="text-lg">"Excellent service and professional team. Thank you!"</p>
-              <p className="text-sm text-gray-400">- Sarah Smith</p>
-            </div>
-          </div>
-        </div>
+      </section>
+
+      {/* MAIN CONTENT */}
+      <div className="bg-white text-black py-10 px-4 md:px-20">
+        {/* Interpretation Section */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold bg-[#0086bf] text-white p-2">
+            Interpretation
+          </h2>
+          <p className="mt-2">
+            The words with initial capital letters have meanings defined under the following conditions. These definitions will have the same meaning regardless of whether they appear in singular or plural form.
+          </p>
+        </section>
+
+        {/* Definitions Section */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold bg-[#0086bf] text-white p-2">
+            Definitions
+          </h2>
+          <p className="mt-2 mb-4">For the purposes of this Privacy Policy:</p>
+          <ul className="list-none space-y-2">
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Account:</strong> A unique account created for you to access our Service or parts of our Service.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Affiliate:</strong> An entity that controls, is controlled by, or is under common control with a party, where "control" means ownership of 50% or more of the shares or equity interest.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Company:</strong> (referred to as either "PROPERTYMACO PROCESS," "we," "us," or "our" in this Policy) refers to PROPERTYMACO PROCESS.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Cookies:</strong> Small files placed on your computer or mobile device by a website, containing details of your browsing history on that website among other uses.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Country:</strong> Florida, United States.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Device:</strong> Any device (such as a computer, cellphone, or digital tablet) that can access our Service.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Personal Data:</strong> Any information that relates to an identified or identifiable individual.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Service:</strong> Our website and services provided by PROPERTYMACO PROCESS.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Service Provider:</strong> Any natural or legal person who processes data on behalf of PROPERTYMACO PROCESS.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Usage Data:</strong> Data collected automatically either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>Website:</strong> PROPERTYMACO PROCESS, accessible from <a href="https://propertymacoprocess.com/" className="text-blue-600 underline">https://propertymacoprocess.com/</a>.
+            </li>
+            <li>
+              <span className="text-green-500 font-bold mr-2">✓</span>
+              <strong>You:</strong> The individual or entity accessing or using the Service, or the legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+            </li>
+          </ul>
+        </section>
       </div>
     </AnimatedPage>
   );

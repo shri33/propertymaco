@@ -80,7 +80,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <>
+    <div>
       {/* ===================== HERO SECTION ===================== */}
       <section className="relative h-[50vh]">
         {/* Background Image */}
@@ -97,15 +97,10 @@ export default function AboutPage() {
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
 
         {/* Text Overlay */}
-        <div className="relative z-10 flex flex-col items-start justify-center h-full text-white text-left pl-44 pr-6 px-4">
+        <div className="relative z-10 flex flex-col items-start justify-center h-full text-white text-left px-4 sm:px-8 md:px-44">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">ABOUT US</h1>
-          <p className="text-lg md:text-xl max-w-2xl">
-            The PropertyMaco helps homeowners sell quickly and hassle-free, no matter the
-            situation is built on a foundation of real estate passion and a commitment to
-            helping homeowners in Florida. We specialize in providing a stress-free,
-            efficient home-selling experience, driven by a mission to simplify the process
-            for sellers facing any situation. Our approach is centered around fairness,
-            efficiency, and adapting to the evolving needs of our clients.
+          <p className="text-lg md:text-xl max-w-2xl mb-6">
+            The PropertyMaco helps homeowners sell quickly and hassle-free, no matter the situation is built on a foundation of real estate passion and a commitment to helping homeowners in Florida. We specialize in providing a stress-free, efficient home-selling experience. Our approach is centered around fairness, efficiency, and adapting to the evolving needs of our clients.
           </p>
           <a
             href="/contact"
@@ -123,12 +118,7 @@ export default function AboutPage() {
           <div className="md:w-1/2 text-left text-black">
             <h2 className="text-3xl font-bold mb-4">Our Story</h2>
             <p className="text-lg">
-              PropertyMaco emerged from a genuine desire to simplify the home-selling process for
-              Florida homeowners. Founded by a team passionate about real estate and helping
-              people, our journey began with a clear vision: to offer a stress-free, fair, and
-              efficient way to sell homes. Over the years, we’ve fine-tuned our approach to ensure
-              we meet the evolving needs of homeowners, transforming the way people sell their
-              properties across the USA.
+              PropertyMaco emerged from a genuine desire to simplify the home-selling process for Florida homeowners. Founded by a team passionate about real estate and helping people, our journey began with a clear vision: to offer a stress-free, fair, and efficient way to sell homes. Over the years, we’ve fine-tuned our approach to ensure we meet the evolving needs of homeowners, transforming the way people sell their properties across the USA.
             </p>
           </div>
 
@@ -139,7 +129,7 @@ export default function AboutPage() {
               alt="Our Story"
               width={600}
               height={400}
-              className="object-cover rounded-lg shadow-md"
+              className="object-cover rounded-lg shadow-md w-full"
             />
           </div>
         </div>
@@ -155,7 +145,7 @@ export default function AboutPage() {
               alt="Our Mission"
               width={600}
               height={400}
-              className="object-cover rounded-lg shadow-md"
+              className="object-cover rounded-lg shadow-md w-full"
             />
           </div>
 
@@ -163,12 +153,7 @@ export default function AboutPage() {
           <div className="md:w-1/2 text-left text-black">
             <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
             <p className="text-lg">
-              At <strong>PropertyMaco</strong>, we are dedicated to transforming the
-              home-selling experience into a seamless and empowering journey. Our mission is
-              to provide a transparent, fair, and rapid process that alleviates the
-              emotional and financial stresses of selling your home. We’re here to ensure
-              every homeowner benefits from a service that is not only efficient but also
-              compassionate—making the path to your next chapter as effortless as possible.
+              At <strong>PropertyMaco</strong>, we are dedicated to transforming the home-selling experience into a seamless and empowering journey. Our mission is to provide a transparent, fair, and rapid process that alleviates the emotional and financial stresses of selling your home. We’re here to ensure every homeowner benefits from a service that is not only efficient but also compassionate—making the path to your next chapter as effortless as possible.
             </p>
           </div>
         </div>
@@ -207,7 +192,7 @@ export default function AboutPage() {
                     alt={stepItem.title}
                     width={500}
                     height={300}
-                    className="object-cover rounded-md shadow-md"
+                    className="object-cover rounded-md shadow-md w-full"
                   />
                 </div>
               </div>
@@ -216,53 +201,63 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===================== WHY CHOOSE US (TEAL BACKGROUND) ===================== */}
+      {/* ===================== WHY CHOOSE US SECTION ===================== */}
       <section className="py-12 bg-[#0086bf]">
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-lg shadow-md p-8 text-black">
             <div className="text-center">
               <h2 className="text-3xl font-bold mb-4">Why Choose Us?</h2>
               <p className="text-lg max-w-4xl mx-auto mb-10">
-                Choosing <strong>PropertyMaco</strong> means opting for a quick,
-                straightforward sale. You won’t need to worry about repairs, cleaning, or
-                uncertain closing dates. We’re here to make your life easier with a direct,
-                fair cash offer.
+                Choosing <strong>PropertyMaco</strong> means opting for a quick, straightforward sale. You won’t need to worry about repairs, cleaning, or uncertain closing dates. We’re here to make your life easier with a direct, fair cash offer.
               </p>
             </div>
-
-            {/* Two Box Containers Side by Side */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Box 1: Our Values */}
-              <div className="bg-white p-6 rounded-lg shadow-md text-black">
-                <h3 className="text-2xl font-bold mb-2">Our Values</h3>
-                <p>
-                  Integrity, transparency, and customer-centric service are at the heart of
-                  everything we do. We’re dedicated to building trust and ensuring a
-                  positive experience for all our clients.
-                </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <div className="border border-black rounded-lg p-6">
+                <div className="flex items-start">
+                  <img
+                    src="/tick-icon.png"
+                    alt="Tick Icon"
+                    className="w-5 h-5 mr-2 mt-1"
+                  />
+                  <p>
+                    <strong>If you don’t have the time, money or desire</strong> to get your home ready to list with a realtor, then we should have a chat.
+                  </p>
+                </div>
               </div>
-
-              {/* Box 2: Our Commitment to You */}
-              <div className="bg-white p-6 rounded-lg shadow-md text-black">
-                <h3 className="text-2xl font-bold mb-2">Our Commitment to You</h3>
-                <p>
-                  We respect your time and property, striving to understand your specific
-                  needs and offer a stress-free selling process. Our team is here to support
-                  you every step of the way, making sure you have the simplest, most
-                  efficient home-selling experience possible.
-                </p>
+              <div className="border border-black rounded-lg p-6">
+                <div className="flex items-start">
+                  <img
+                    src="/tick-icon.png"
+                    alt="Tick Icon"
+                    className="w-5 h-5 mr-2 mt-1"
+                  />
+                  <p>
+                    <strong>We make it simple and easy</strong> to sell a home, without having to repair, update, clean, landscape, stage and show it.
+                  </p>
+                </div>
+              </div>
+              <div className="border border-black rounded-lg p-6">
+                <div className="flex items-start">
+                  <img
+                    src="/tick-icon.png"
+                    alt="Tick Icon"
+                    className="w-5 h-5 mr-2 mt-1"
+                  />
+                  <p>
+                    <strong>Upon request, we’ve even bought homes sight unseen.</strong> Contact us today or fill out the form to have a chat about your house!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===================== FREQUENTLY ASKED QUESTIONS ===================== */}
+      {/* ===================== FAQ SECTION ===================== */}
       <section className="py-12 bg-[#0086bf]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Q1 */}
             <div
               className="bg-white text-black rounded-md p-4 cursor-pointer"
               onClick={() => handleToggle(0)}
@@ -276,8 +271,6 @@ export default function AboutPage() {
                 </p>
               )}
             </div>
-
-            {/* Q2 */}
             <div
               className="bg-white text-black rounded-md p-4 cursor-pointer"
               onClick={() => handleToggle(1)}
@@ -291,8 +284,6 @@ export default function AboutPage() {
                 </p>
               )}
             </div>
-
-            {/* Q3 */}
             <div
               className="bg-white text-black rounded-md p-4 cursor-pointer"
               onClick={() => handleToggle(2)}
@@ -302,13 +293,10 @@ export default function AboutPage() {
               </h3>
               {openIndex === 2 && (
                 <p className="text-sm">
-                  Absolutely. We encourage you to have any trusted advisor review the
-                  contract to ensure you’re comfortable.
+                  Absolutely. We encourage you to have any trusted advisor review the contract to ensure you’re comfortable.
                 </p>
               )}
             </div>
-
-            {/* Q4 */}
             <div
               className="bg-white text-black rounded-md p-4 cursor-pointer"
               onClick={() => handleToggle(3)}
@@ -318,14 +306,13 @@ export default function AboutPage() {
               </h3>
               {openIndex === 3 && (
                 <p className="text-sm">
-                  Not at all. We can close at the title company’s office, or even remotely in
-                  your own living room.
+                  Not at all. We can close at the title company’s office, or even remotely in your own living room.
                 </p>
               )}
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

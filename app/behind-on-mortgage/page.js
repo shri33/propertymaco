@@ -1,4 +1,5 @@
 "use client";
+import { useState, useRef, useEffect } from "react";
 import AnimatedPage from "@/app/components/common/AnimatedPage";
 import SEO from "@/app/components/common/SEO";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export default function BehindOnMortgagePage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[50vh]">
+      <section className="relative h-[70vh]">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -26,7 +27,7 @@ export default function BehindOnMortgagePage() {
         {/* Color Overlay */}
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
         {/* Text Content */}
-        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4">
+        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4 sm:px-8 md:px-20">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Behind on Mortgage: Save Your Home from Foreclosure and Even Earn Extra Cash
           </h1>
@@ -43,7 +44,7 @@ export default function BehindOnMortgagePage() {
 
       {/* SECTION 1: Selling Your Home in Hard Times */}
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Text Column (Left) */}
           <div className="md:w-1/2 text-black">
             <h2 className="text-3xl font-bold mb-4">Selling Your Home in Hard Times</h2>
@@ -66,7 +67,7 @@ export default function BehindOnMortgagePage() {
 
       {/* SECTION 2: Legal Considerations of Falling Behind on Mortgage Payments */}
       <section className="py-16 px-4" style={{ backgroundColor: "#0086bf", color: "black" }}>
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Image Column (Left) */}
           <div className="md:w-1/2">
             <Image
@@ -91,7 +92,7 @@ export default function BehindOnMortgagePage() {
 
       {/* SECTION 3: How PropertyMaco Gets You Out of Mortgage Distress */}
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Text Column (Left) */}
           <div className="md:w-1/2 text-black">
             <h2 className="text-3xl font-bold mb-4">
@@ -116,7 +117,7 @@ export default function BehindOnMortgagePage() {
 
       {/* SECTION 4: Relieve the Pain of Missed Mortgage Payments */}
       <section className="py-16 px-4" style={{ backgroundColor: "#0086bf", color: "black" }}>
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Image Column (Left) */}
           <div className="md:w-1/2">
             <Image
@@ -141,7 +142,7 @@ export default function BehindOnMortgagePage() {
 
       {/* TAKE CONTROL OF YOUR FUTURE SECTION */}
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-8 md:px-20">
           {/* Text Column (Left) */}
           <div className="md:w-1/2 text-black">
             <h2 className="text-3xl font-bold mb-4">Take Control of Your Future</h2>
@@ -167,7 +168,7 @@ export default function BehindOnMortgagePage() {
 
       {/* SECTION 5: The Process: Selling Your Home Fast */}
       <section className="py-16 px-4" style={{ backgroundColor: "#0086bf", color: "black" }}>
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center px-4 sm:px-8 md:px-20">
           {/* Section Heading */}
           <h2 className="text-3xl font-bold mb-4">The Process: Selling Your Home Fast</h2>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
@@ -202,7 +203,7 @@ export default function BehindOnMortgagePage() {
 
       {/* NEW SECTION: Contact Marco’s Friendly Home Buyer Team to Get Started */}
       <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center px-4 sm:px-8 md:px-20">
           <h2 className="text-3xl font-bold mb-4 text-black">
             Contact Marco’s Friendly Home Buyer Team to Get Started
           </h2>

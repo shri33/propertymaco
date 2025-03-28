@@ -13,7 +13,7 @@ export default function FreshStartPage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[40vh]">
+      <section className="relative h-[60vh]">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image

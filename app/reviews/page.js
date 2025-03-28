@@ -128,7 +128,7 @@ function StarRating({ rating }) {
   return <div className="flex items-center">{stars}</div>;
 }
 
-// ReviewCarousel component: displays 4 reviews per slide
+// ReviewCarousel component: displays 4 reviews per slide in a responsive grid
 const ReviewCarousel = ({ reviews }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -142,7 +142,7 @@ const ReviewCarousel = ({ reviews }) => {
     return () => clearInterval(interval);
   }, [totalSlides]);
 
-  // Show 4 reviews per slide
+  // Determine the 4 reviews to display for the current slide
   const startIndex = currentSlide * 4;
   let currentReviews = reviews.slice(startIndex, startIndex + 4);
   if (currentReviews.length < 4) {
@@ -151,11 +151,7 @@ const ReviewCarousel = ({ reviews }) => {
 
   // Toggle full text vs snippet
   const handleReadMore = (idx) => {
-    if (expandedIndex === idx) {
-      setExpandedIndex(null);
-    } else {
-      setExpandedIndex(idx);
-    }
+    setExpandedIndex(expandedIndex === idx ? null : idx);
   };
 
   return (
@@ -166,21 +162,22 @@ const ReviewCarousel = ({ reviews }) => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.5 }}
-        className="flex space-x-4"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
       >
         {currentReviews.map((review, idx) => {
           const avatarLetter = review.name.charAt(0) || "";
           const isExpanded = expandedIndex === idx;
-          const displayedText = isExpanded
-            ? review.comment
-            : review.comment.length > 100
-            ? review.comment.slice(0, 100) + "..."
-            : review.comment;
+          const displayedText =
+            isExpanded
+              ? review.comment
+              : review.comment.length > 100
+              ? review.comment.slice(0, 100) + "..."
+              : review.comment;
 
           return (
             <div
               key={idx}
-              className="relative flex-1 bg-[#F7FEFF] border border-gray-200 p-4 rounded-lg text-left transition-transform hover:-translate-y-1 hover:shadow-lg"
+              className="relative bg-[#F7FEFF] border border-gray-200 p-4 rounded-lg text-left transition-transform hover:-translate-y-1 hover:shadow-lg"
             >
               <Image
                 src="/google.png"
@@ -225,6 +222,7 @@ export default function ReviewsPage() {
         title="Reviews | PropertyMaco"
         description="Read real testimonials from homeowners who sold their properties to PropertyMaco."
       />
+      {/* HERO SECTION */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -240,16 +238,16 @@ export default function ReviewsPage() {
           />
         </div>
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        <div className="container mx-auto relative z-10 text-left pl-10 pr-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "white" }}>
-            Reviews
-          </h1>
+        <div className="container mx-auto relative z-10 text-left pl-4 sm:pl-10 pr-4 sm:pr-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Reviews</h1>
           <p className="text-lg max-w-2xl">
             See what our customers have to say about their experience with PropertyMaco.
             Discover genuine reviews from homeowners who sold their houses quickly and hassle-free.
           </p>
         </div>
       </motion.section>
+
+      {/* VIDEO REVIEWS SECTION */}
       <section className="pt-16 pb-8 px-4 bg-white">
         <div className="container mx-auto text-center">
           <motion.h2
@@ -262,23 +260,24 @@ export default function ReviewsPage() {
             Video Reviews
           </motion.h2>
           <p className="text-lg mb-8 text-black max-w-4xl mx-auto">
-            We are the only home buyer with dozens of video reviews featuring ACTUAL homeowners
-            talking about their experience selling to us. There are truly no fees or commissions,
-            and we buy houses AS-IS, so there are definitely no repairs (or even cleaning) needed.
+            We are the only home buyer with dozens of video reviews featuring ACTUAL homeowners talking about their experience selling to us. There are truly no fees or commissions, and we buy houses AS-IS, so there are definitely no repairs (or even cleaning) needed.
           </p>
           <div className="mx-auto max-w-7xl rounded-lg overflow-hidden shadow-lg">
             <div className="aspect-video">
               <iframe
+                className="w-full h-full"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Andrea Eachus - From Start to Finish"
+                title="PropertyMaco Client Testimonials"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="w-full h-full"
               ></iframe>
             </div>
           </div>
         </div>
       </section>
+
+      {/* REVIEWS CAROUSEL SECTION */}
       <section className="py-8 px-4 bg-white">
         <div className="container mx-auto text-center">
           <div className="mx-auto max-w-7xl rounded-lg overflow-hidden shadow-lg px-4 py-6 bg-white">

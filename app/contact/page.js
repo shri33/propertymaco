@@ -12,7 +12,7 @@ export default function ContactPage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[40vh]">
+      <section className="relative h-[70vh]">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image

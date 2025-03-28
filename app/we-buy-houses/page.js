@@ -1,5 +1,4 @@
-"use client"; // Mark file as a Client Component
-
+"use client";
 import { useState, useRef, useEffect } from "react";
 import AnimatedPage from "@/app/components/common/AnimatedPage";
 import SEO from "@/app/components/common/SEO";
@@ -133,7 +132,7 @@ function StarRating({ rating }) {
   return <div className="flex items-center">{stars}</div>;
 }
 
-// ReviewCarousel component: displays 4 reviews per slide with fade/slide animation
+// ReviewCarousel component: displays 4 reviews per slide in a responsive grid
 const ReviewCarousel = ({ reviews }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -147,7 +146,7 @@ const ReviewCarousel = ({ reviews }) => {
     return () => clearInterval(interval);
   }, [totalSlides]);
 
-  // Show 4 reviews per slide
+  // Show 4 reviews per slide; on small screens grid will adjust accordingly
   const startIndex = currentSlide * 4;
   let currentReviews = reviews.slice(startIndex, startIndex + 4);
   if (currentReviews.length < 4) {
@@ -158,11 +157,7 @@ const ReviewCarousel = ({ reviews }) => {
 
   // Toggle full text vs snippet
   const handleReadMore = (idx) => {
-    if (expandedIndex === idx) {
-      setExpandedIndex(null);
-    } else {
-      setExpandedIndex(idx);
-    }
+    setExpandedIndex(expandedIndex === idx ? null : idx);
   };
 
   return (
@@ -173,21 +168,22 @@ const ReviewCarousel = ({ reviews }) => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.5 }}
-        className="flex space-x-4"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
       >
         {currentReviews.map((review, idx) => {
           const avatarLetter = review.name.charAt(0) || "";
           const isExpanded = expandedIndex === idx;
-          const displayedText = isExpanded
-            ? review.comment
-            : review.comment.length > 100
-            ? review.comment.slice(0, 100) + "..."
-            : review.comment;
+          const displayedText =
+            isExpanded
+              ? review.comment
+              : review.comment.length > 100
+              ? review.comment.slice(0, 100) + "..."
+              : review.comment;
 
           return (
             <div
               key={idx}
-              className="relative flex-1 bg-[#F7FEFF] border border-gray-200 p-4 rounded-lg text-left transition-transform hover:-translate-y-1 hover:shadow-lg"
+              className="relative bg-[#F7FEFF] border border-gray-200 p-4 rounded-lg text-left transition-transform hover:-translate-y-1 hover:shadow-lg"
             >
               <Image
                 src="/google.png"
@@ -278,7 +274,7 @@ export default function WeBuyHousesPage() {
         {/* Color Overlay */}
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
         {/* Text Content */}
-        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left">
+        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4 sm:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             WE BUY HOUSES
           </h1>
@@ -336,42 +332,12 @@ export default function WeBuyHousesPage() {
               PropertyMaco provides comprehensive support for homeowners experiencing a wide range of circumstances. Our expertise includes helping you navigate:
             </p>
             <ul className="space-y-2">
-              <li className="flex items-center">
-                <TickIcon />
-                <Link href="/situations" className="underline">
-                  Divorce or Separation
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <TickIcon />
-                <Link href="/situations" className="underline">
-                  Avoiding Foreclosure
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <TickIcon />
-                <Link href="/situations" className="underline">
-                  Bankruptcy
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <TickIcon />
-                <Link href="/situations" className="underline">
-                  Relocation
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <TickIcon />
-                <Link href="/situations" className="underline">
-                  Behind On Mortgage
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <TickIcon />
-                <Link href="/situations" className="underline">
-                  Upgrading or Downsizing
-                </Link>
-              </li>
+              <li className="flex items-center"><TickIcon /><Link href="/situations" className="underline">Divorce or Separation</Link></li>
+              <li className="flex items-center"><TickIcon /><Link href="/situations" className="underline">Avoiding Foreclosure</Link></li>
+              <li className="flex items-center"><TickIcon /><Link href="/situations" className="underline">Bankruptcy</Link></li>
+              <li className="flex items-center"><TickIcon /><Link href="/situations" className="underline">Relocation</Link></li>
+              <li className="flex items-center"><TickIcon /><Link href="/situations" className="underline">Behind On Mortgage</Link></li>
+              <li className="flex items-center"><TickIcon /><Link href="/situations" className="underline">Upgrading or Downsizing</Link></li>
             </ul>
           </div>
         </div>
@@ -381,9 +347,7 @@ export default function WeBuyHousesPage() {
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto">
           <div className="border border-blue-500 p-6 rounded-lg">
-            <h2 className="text-3xl font-bold mb-8 text-center text-black">
-              Our Process Explained
-            </h2>
+            <h2 className="text-3xl font-bold mb-8 text-center text-black">Our Process Explained</h2>
             {stepsData.map((stepItem, idx) => (
               <div
                 key={idx}
@@ -395,9 +359,7 @@ export default function WeBuyHousesPage() {
               >
                 {/* Step Number */}
                 <div className="md:w-1/6 text-left md:text-right pr-4 mb-4 md:mb-0">
-                  <span className="text-4xl font-bold text-gray-400">
-                    {stepItem.step}
-                  </span>
+                  <span className="text-4xl font-bold text-gray-400">{stepItem.step}</span>
                 </div>
                 {/* Step Text */}
                 <div className="md:w-1/2 text-left text-black px-4">
