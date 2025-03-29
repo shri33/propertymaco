@@ -274,8 +274,8 @@ export default function Home() {
             />
             <p className="text-center text-gray-800 font-semibold mt-4 text-sm sm:text-base">
               NO COMMISSION <br />
-              marco@gmail.com <br />
-              813-800-SELL (7355)
+              (239) 990-5070 <br />
+              (239) 990-5070-SELL 
             </p>
           </div>
         </div>

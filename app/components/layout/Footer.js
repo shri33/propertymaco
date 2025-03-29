@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -22,7 +21,11 @@ export default function Footer() {
             </Link>
             <div className="text-center md:text-left">
               <p className="text-sm sm:text-base mb-1">Available 24/7</p>
-              <div className="flex items-center justify-center md:justify-start mb-2">
+              {/* Wrap the phone icon and number in an anchor tag */}
+              <a
+                href="tel:2399905070"
+                className="flex items-center justify-center md:justify-start mb-2 hover:underline"
+              >
                 <Image
                   src="/phone-icon.png"
                   alt="Phone Icon"
@@ -33,7 +36,7 @@ export default function Footer() {
                 <p className="text-lg sm:text-xl md:text-2xl font-bold">
                   (239) 990-5070
                 </p>
-              </div>
+              </a>
               
               {/* Social Icons with responsive spacing */}
               <div className="flex justify-center md:justify-start space-x-3 mt-3">
@@ -56,7 +59,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                 >
                   <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.247-.67.599-1.227 1.153-1.772A4.904 4.904 0 015.45 2.525c.638-.247 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 1.8c-2.67 0-2.986.01-4.04.06-.976.044-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.054-.06 1.37-.06 4.04 0 2.67.01 2.986.06 4.04.044.976.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.047 1.37.06 4.04.06 2.67 0 2.987-.01 4.04-.06.976-.044 1.504-.207 1.857-.344.467-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.047-1.054.06-1.37.06-4.04 0-2.67-.01-2.986-.06-4.04-.044-.976-.207-1.504-.344-1.857a3.097 3.097 0 00-.748-1.15 3.097 3.097 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.054-.047-1.37-.06-4.04-.06zm0 3.064A5.136 5.136 0 1 1 12 17.136 5.136 5.136 0 0 1 12 6.864zm0 8.466a3.332 3.332 0 1 0 0-6.664 3.332 3.332 0 0 0 0 6.664zm6.538-8.671a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z" />
+                    <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.247-.67.599-1.227 1.153-1.772A4.904 4.904 0 015.45 2.525c.638-.247 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 1.8c-2.986 0-3.25.01-4.392.064-.972.044-1.498.203-1.847.336-.464.183-.8.398-1.152.75-.351.351-.567.688-.75 1.152-.133.349-.292.875-.336 1.847C2.01 8.75 2 9.014 2 12c0 2.986.01 3.25.064 4.392.044.972.203 1.498.336 1.847.183.466.398.8.75 1.152.351.35.688.567 1.152.75.349.133.875.292 1.847.336 1.142.054 1.406.064 4.392.064 2.986 0 3.25-.01 4.392-.064.972-.044 1.498-.203 1.847-.336.464-.183.8-.398 1.152-.75.351-.35.567-.688.75-1.152.133-.349.292-.875.336-1.847.054-1.142.064-1.406.064-4.392 0-2.986-.01-3.25-.064-4.392-.044-.972-.203-1.498-.336-1.847a3.823 3.823 0 00-.75-1.152 3.823 3.823 0 00-1.152-.75c-.349-.133-.875-.292-1.847-.336C15.25 3.81 14.986 3.8 12 3.8zm0 3.064A5.136 5.136 0 1 1 12 17.136 5.136 5.136 0 0 1 12 6.864zm0 8.466a3.332 3.332 0 1 0 0-6.664 3.332 3.332 0 0 0 0 6.664zm6.538-8.671a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z" />
                   </svg>
                 </a>
               </div>
@@ -85,14 +88,14 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="underline hover:opacity-80"
                 >
-                  Terms & Conditions
+                  Terms &amp; Conditions
                 </a>
               </p>
               <p className="text-xs sm:text-sm">
                 Messaging Privacy Policy:{" "}
                 <a
                   href="https://propertymaco.h.trustco.ai/#privacyArea"
-                  target="_blank"
+                  target=" "
                   rel="noopener noreferrer"
                   className="underline hover:opacity-80"
                 >
@@ -107,19 +110,29 @@ export default function Footer() {
             <p className="text-sm sm:text-base font-bold mb-2">Quick Links</p>
             <div className="grid grid-cols-3 md:grid-cols-1 gap-2 justify-center md:justify-start">
               <Link href="/about-us">
-                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">About Us</span>
+                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">
+                  About Us
+                </span>
               </Link>
               <Link href="/reviews">
-                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">Reviews</span>
+                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">
+                  Reviews
+                </span>
               </Link>
               <Link href="/we-buy-houses">
-                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">We Buy Houses</span>
+                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">
+                  We Buy Houses
+                </span>
               </Link>
               <Link href="/faq">
-                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">FAQs</span>
+                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">
+                  FAQs
+                </span>
               </Link>
               <Link href="/contact">
-                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">Contact Us</span>
+                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">
+                  Contact Us
+                </span>
               </Link>
             </div>
           </div>
@@ -132,10 +145,14 @@ export default function Footer() {
           </p>
           <div className="flex space-x-3 sm:space-x-4 text-xs sm:text-sm">
             <Link href="/privacy-policy">
-              <span className="hover:underline cursor-pointer">Privacy Policy</span>
+              <span className="hover:underline cursor-pointer">
+                Privacy Policy
+              </span>
             </Link>
             <Link href="/accessibility">
-              <span className="hover:underline cursor-pointer">Accessibility</span>
+              <span className="hover:underline cursor-pointer">
+                Accessibility
+              </span>
             </Link>
           </div>
         </div>
