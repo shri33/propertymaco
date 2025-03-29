@@ -7,7 +7,6 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  // Separate refs for desktop and mobile dropdowns
   const desktopDropdownRef = useRef(null);
   const mobileDropdownRef = useRef(null);
 
@@ -42,8 +41,8 @@ export default function Header() {
 
   return (
     <header className="bg-black shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mobile Header */}
+      <div className="container mx-auto px-4 sm:px-6 xl:px-8">
+        {/* Mobile Header (below md) */}
         <div className="flex md:hidden items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -80,8 +79,8 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Tablet Header - Designed for iPad Pro (md to lg) */}
-        <div className="hidden md:flex lg:hidden items-center justify-between py-4">
+        {/* Tablet Header (md to < xl) - iPad Pro at 1024px width will use this */}
+        <div className="hidden md:flex xl:hidden items-center justify-between py-4">
           {/* Tablet Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -160,15 +159,15 @@ export default function Header() {
             </div>
             <Link
               href="/contact"
-              className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md font-medium text-base transition-colors"
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium text-base transition-colors"
             >
               GET AN OFFER
             </Link>
           </nav>
         </div>
 
-        {/* Desktop Header - For lg and up (including iPad Pro 12.9" and larger desktops) */}
-        <div className="hidden lg:flex items-center justify-between py-4">
+        {/* Desktop Header (xl and up) */}
+        <div className="hidden xl:flex items-center justify-between py-4">
           {/* Desktop Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -286,7 +285,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu (opened via hamburger) */}
       {mobileNavOpen && (
         <nav className="md:hidden bg-black px-4 py-4 transition-all duration-300">
           <div className="flex flex-col space-y-4">
