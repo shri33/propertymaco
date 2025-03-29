@@ -28,7 +28,7 @@ const stepsData = [
     step: "01",
     title: "Initial Contact",
     text: "We begin with a straightforward conversation to understand your unique situation and needs, ensuring we align our services with your expectations.",
-    image: "/step1.jpg", // Replace with your actual image path
+    image: "/step1.jpg",
   },
   {
     step: "02",
@@ -57,7 +57,7 @@ const stepsData = [
   {
     step: "06",
     title: "Sale Completion",
-    text: "The final step is the completion of the sale, where you finalize the transaction and receive your cash promptly, allowing you to move forward stress-free.",
+    text: "The final step is the completion of the sale, where you finalize the transaction and receive your cash promptly, allowing you to move forward stress‑free.",
     image: "/step6.jpg",
   },
 ];
@@ -102,9 +102,8 @@ const googleReviewsData = [
     name: "Bob Williams",
     date: "2 January 2023",
     rating: 5,
-    comment: "Transparent and hassle-free experience.",
+    comment: "Transparent and hassle‑free experience.",
   },
-  // ... additional review objects
 ];
 
 // Utility function to render 5 stars for a review
@@ -146,7 +145,6 @@ const ReviewCarousel = ({ reviews }) => {
     return () => clearInterval(interval);
   }, [totalSlides]);
 
-  // Show 4 reviews per slide; on small screens grid will adjust accordingly
   const startIndex = currentSlide * 4;
   let currentReviews = reviews.slice(startIndex, startIndex + 4);
   if (currentReviews.length < 4) {
@@ -155,7 +153,6 @@ const ReviewCarousel = ({ reviews }) => {
     );
   }
 
-  // Toggle full text vs snippet
   const handleReadMore = (idx) => {
     setExpandedIndex(expandedIndex === idx ? null : idx);
   };
@@ -222,10 +219,9 @@ const ReviewCarousel = ({ reviews }) => {
 };
 
 export default function WeBuyHousesPage() {
-  // Define visibleSteps and stepRefs for the Our Process Explained section
   const [visibleSteps, setVisibleSteps] = useState({});
   const stepRefs = useRef([]);
-  const [openIndex, setOpenIndex] = useState(null); // For FAQ if needed
+  const [openIndex, setOpenIndex] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -261,34 +257,34 @@ export default function WeBuyHousesPage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[50vh]">
-        {/* Background Image */}
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/hero.jpg"
-            alt="Hero Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-        {/* Color Overlay */}
-        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        {/* Text Content */}
-        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4 sm:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            WE BUY HOUSES
-          </h1>
-          <p className="text-lg max-w-2xl text-white mb-8">
-            Looking to sell your house fast in Florida? The Friendly Home Buyer offers a straightforward, stress‑free solution for homeowners. We buy houses quickly, regardless of their situation. Whether you’re facing financial difficulties, relocating, or simply need to sell your property swiftly, we provide a seamless experience tailored to your unique needs.
-          </p>
-          <Link href="/contact">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
-              Get an Offer
-            </button>
-          </Link>
-        </div>
-      </section>
-
+      {/* HERO SECTION */}
+<section className="relative h-[70vh]">
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-20">
+    <Image
+      src="/hero.jpg"
+      alt="Hero Background"
+      fill
+      className="object-cover"
+    />
+  </div>
+  {/* Color Overlay */}
+  <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
+  {/* Text Content */}
+  <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4 sm:px-8">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+      WE BUY HOUSES
+    </h1>
+    <p className="text-base sm:text-lg md:text-xl max-w-2xl text-white mb-8">
+      Looking to sell your house fast in Florida? The Friendly Home Buyer offers a straightforward, stress‑free solution for homeowners. We buy houses quickly, regardless of their situation.
+    </p>
+    <Link href="/contact">
+      <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-3 px-4 sm:px-6 rounded-md transition duration-300">
+        Get an Offer
+      </button>
+    </Link>
+  </div>
+</section>
       {/* WHY SELL YOUR HOUSE TO US SECTION */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
@@ -395,7 +391,7 @@ export default function WeBuyHousesPage() {
           {/* Right Image Column */}
           <div className="md:w-1/2">
             <Image
-              src="/guarantee.jpg" // Replace with your guarantee image
+              src="/guarantee.jpg"
               alt="Our Guarantee"
               width={600}
               height={400}
@@ -422,11 +418,11 @@ export default function WeBuyHousesPage() {
       <section className="py-16 px-4 bg-[#0086bf]">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-black">Get Started Today</h2>
-          <p className="text-lg mb-8 text-black max-w-4xl mx-auto">
-            Begin your journey to a hassle‑free home-selling process with PropertyMaco by filling out our quick form today. With no obligation and a commitment to a stress‑free consultation, we ensure a transparent experience right from the start. Let us guide you with ease and confidence toward a successful sale.
+          <p className="text-base sm:text-lg md:text-xl mb-8 text-black max-w-4xl mx-auto">
+            Begin your journey to a hassle‑free home‑selling process with PropertyMaco by filling out our quick form today. With no obligation and a commitment to a stress‑free consultation, we ensure a transparent experience right from the start. Let us guide you with ease and confidence toward a successful sale.
           </p>
           <Link href="/contact">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
+            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-3 px-4 sm:px-6 rounded-md transition duration-300">
               Get an Offer
             </button>
           </Link>

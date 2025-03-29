@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import AnimatedPage from "@/app/components/common/AnimatedPage"; // Ensure this file exists
 import SEO from "@/app/components/common/SEO";
 import Image from "next/image";
+import Link from "next/link";
 
 // Example array for otherTeamMembers with a 'description' field for the modal
 const otherTeamMembers = [
@@ -71,8 +72,9 @@ export default function TeamPage() {
         description="Meet the dedicated professionals behind PropertyMaco."
       />
 
-      {/* Hero Section */}
-      <section className="relative h-[40vh]">
+      {/* ===================== HERO SECTION ===================== */}
+      <section className="relative min-h-[40vh] flex items-center">
+        {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
             src="/hero.jpg"
@@ -81,26 +83,34 @@ export default function TeamPage() {
             className="object-cover"
           />
         </div>
+        {/* Color Overlay */}
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        <div className="relative z-10 flex items-center justify-start h-full text-white text-left pl-4 sm:pl-8 md:pl-44 pr-6">
-          <div className="max-w-xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Team</h1>
-            <p className="text-lg md:text-xl mb-6">
-              We have collectively decades of experience in real estate and we flat out get the job done.
-              When someone decides to sell their house to us, they’re trusting our team to ensure a timely closing
-              with no hassle and no surprises. Quite simply, we’re the best at what we do.
-            </p>
-            <a
-              href="/contact"
-              className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-md transition duration-300"
-            >
-              Get an Offer
-            </a>
+        {/* Content Container */}
+        <div className="relative z-10 container mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+          <div className="flex flex-col md:flex-row">
+            {/* Left Column: Hero Text & Button */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4">
+                Our Team
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl max-w-2xl mb-6">
+                We have collectively decades of experience in real estate and we flat out get the job done.
+                When someone decides to sell their house to us, they’re trusting our team to ensure a timely closing
+                with no hassle and no surprises. Quite simply, we’re the best at what we do.
+              </p>
+              <Link href="/contact">
+                <span className="inline-block mt-6 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 text-sm sm:text-base mx-auto md:mx-0">
+                  Get an Offer
+                </span>
+              </Link>
+            </div>
+            {/* Right Column: Empty on larger screens */}
+            <div className="hidden md:block md:w-1/2"></div>
           </div>
         </div>
       </section>
 
-      {/* Eduard Chepurnoy Section */}
+      {/* ===================== EDUARD CHEPURNOY SECTION ===================== */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           {/* Left Column: Photo */}
@@ -129,10 +139,12 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Meet The Rest of The Team */}
+      {/* ===================== MEET THE REST OF THE TEAM SECTION ===================== */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-left text-black">Meet The Rest of The Team</h2>
+          <h2 className="text-3xl font-bold mb-8 text-left text-black">
+            Meet The Rest of The Team
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-8">
             {otherTeamMembers.map((member, idx) => (
               <div
@@ -154,7 +166,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Modal for Selected Team Member */}
+      {/* ===================== MODAL FOR SELECTED TEAM MEMBER ===================== */}
       {selectedMember && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
           <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full flex flex-col md:flex-row pointer-events-auto">

@@ -1,14 +1,14 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
-// Define your six steps in an array
 const stepsData = [
   {
     step: "01",
     title: "Initial Contact",
     text: "We begin with a straightforward conversation to understand your unique situation and needs, ensuring we align our services with your expectations.",
-    image: "/step1.jpg", // Replace with your actual image path
+    image: "/step1.jpg",
   },
   {
     step: "02",
@@ -82,50 +82,61 @@ export default function AboutPage() {
   return (
     <div>
       {/* ===================== HERO SECTION ===================== */}
-      <section className="relative h-[50vh]">
+      <section className="relative min-h-[50vh] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/hero.jpg" // Replace with your actual hero image
+            src="/hero.jpg"
             alt="Hero Background"
             fill
             className="object-cover"
           />
         </div>
-
         {/* Color Overlay */}
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-
-        {/* Text Overlay */}
-        <div className="relative z-10 flex flex-col items-start justify-center h-full text-white text-left px-4 sm:px-8 md:px-44">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">ABOUT US</h1>
-          <p className="text-lg md:text-xl max-w-2xl mb-6">
-            The PropertyMaco helps homeowners sell quickly and hassle-free, no matter the situation is built on a foundation of real estate passion and a commitment to helping homeowners in Florida. We specialize in providing a stress-free, efficient home-selling experience. Our approach is centered around fairness, efficiency, and adapting to the evolving needs of our clients.
-          </p>
-          <a
-            href="/contact"
-            className="mt-6 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-md transition duration-300"
-          >
-            Get an Offer
-          </a>
+        {/* Content Container */}
+        <div className="relative z-10 container mx-auto px-4 sm:px-8">
+          <div className="flex flex-col md:flex-row">
+            {/* Left Column: Hero Text & Button */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4">
+                ABOUT US
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl max-w-2xl mb-6">
+                The PropertyMaco helps homeowners sell quickly and hassle-free,
+                no matter the situation. Built on a foundation of real estate
+                passion and commitment, we specialize in providing a stress-free,
+                efficient home-selling experience.
+              </p>
+              <Link href="/contact">
+                <span className="inline-block mt-6 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 text-sm sm:text-base mx-auto md:mx-0">
+                  Get an Offer
+                </span>
+              </Link>
+            </div>
+            {/* Right Column: Empty for layout on larger screens */}
+            <div className="hidden md:block md:w-1/2"></div>
+          </div>
         </div>
       </section>
 
       {/* ===================== OUR STORY SECTION ===================== */}
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
-          {/* Text on the left */}
           <div className="md:w-1/2 text-left text-black">
             <h2 className="text-3xl font-bold mb-4">Our Story</h2>
             <p className="text-lg">
-              PropertyMaco emerged from a genuine desire to simplify the home-selling process for Florida homeowners. Founded by a team passionate about real estate and helping people, our journey began with a clear vision: to offer a stress-free, fair, and efficient way to sell homes. Over the years, we’ve fine-tuned our approach to ensure we meet the evolving needs of homeowners, transforming the way people sell their properties across the USA.
+              PropertyMaco emerged from a genuine desire to simplify the
+              home-selling process for a Nation-wide homeowners. Founded by a team
+              passionate about real estate and helping people, our journey began
+              with a clear vision: to offer a stress-free, fair, and efficient way
+              to sell homes. Over the years, we’ve fine-tuned our approach to meet
+              the evolving needs of homeowners across the USA.
             </p>
           </div>
-
-          {/* Image on the right */}
           <div className="md:w-1/2">
             <Image
-              src="/our-story.jpg" // Replace with your actual image
+              src="/our-story.jpg"
               alt="Our Story"
               width={600}
               height={400}
@@ -138,54 +149,56 @@ export default function AboutPage() {
       {/* ===================== OUR MISSION SECTION ===================== */}
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
-          {/* Left side: Image */}
           <div className="md:w-1/2">
             <Image
-              src="/mission.jpg" // Replace with your actual mission image
+              src="/mission.jpg"
               alt="Our Mission"
               width={600}
               height={400}
               className="object-cover rounded-lg shadow-md w-full"
             />
           </div>
-
-          {/* Right side: Text */}
           <div className="md:w-1/2 text-left text-black">
             <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
             <p className="text-lg">
-              At <strong>PropertyMaco</strong>, we are dedicated to transforming the home-selling experience into a seamless and empowering journey. Our mission is to provide a transparent, fair, and rapid process that alleviates the emotional and financial stresses of selling your home. We’re here to ensure every homeowner benefits from a service that is not only efficient but also compassionate—making the path to your next chapter as effortless as possible.
+              At <strong>PropertyMaco</strong>, we are dedicated to transforming
+              the home-selling experience into a seamless and empowering journey.
+              Our mission is to provide a transparent, fair, and rapid process that
+              alleviates the emotional and financial stresses of selling your home.
+              We’re here to ensure every homeowner benefits from a service that is
+              both efficient and compassionate.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ===================== OUR PROCESS EXPLAINED (6 Steps) ===================== */}
+      {/* ===================== OUR PROCESS EXPLAINED SECTION ===================== */}
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto">
-          {/* Blue box container */}
           <div className="border border-blue-500 p-6 rounded-lg">
-            <h2 className="text-3xl font-bold mb-8 text-center text-black">Our Process Explained</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center text-black">
+              Our Process Explained
+            </h2>
             {stepsData.map((stepItem, idx) => (
               <div
                 key={idx}
                 ref={(el) => (stepRefs.current[idx] = el)}
                 data-index={idx}
                 className={`my-12 flex flex-col md:flex-row items-center transition-all duration-700 transform ${
-                  visibleSteps[idx] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  visibleSteps[idx]
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
                 }`}
               >
-                {/* Step Number on Left */}
                 <div className="md:w-1/6 text-left md:text-right pr-4 mb-4 md:mb-0">
-                  <span className="text-4xl font-bold text-gray-400">{stepItem.step}</span>
+                  <span className="text-4xl font-bold text-gray-400">
+                    {stepItem.step}
+                  </span>
                 </div>
-
-                {/* Step Text in Middle */}
                 <div className="md:w-1/2 text-left text-black px-4">
                   <h3 className="text-2xl font-bold mb-2">{stepItem.title}</h3>
                   <p className="text-lg">{stepItem.text}</p>
                 </div>
-
-                {/* Image Column */}
                 <div className="md:w-5/12 mt-4 md:mt-0">
                   <Image
                     src={stepItem.image}
@@ -208,7 +221,10 @@ export default function AboutPage() {
             <div className="text-center">
               <h2 className="text-3xl font-bold mb-4">Why Choose Us?</h2>
               <p className="text-lg max-w-4xl mx-auto mb-10">
-                Choosing <strong>PropertyMaco</strong> means opting for a quick, straightforward sale. You won’t need to worry about repairs, cleaning, or uncertain closing dates. We’re here to make your life easier with a direct, fair cash offer.
+                Choosing <strong>PropertyMaco</strong> means opting for a quick,
+                straightforward sale. You won’t need to worry about repairs,
+                cleaning, or uncertain closing dates. We’re here to make your life
+                easier with a direct, fair cash offer.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -220,7 +236,8 @@ export default function AboutPage() {
                     className="w-5 h-5 mr-2 mt-1"
                   />
                   <p>
-                    <strong>If you don’t have the time, money or desire</strong> to get your home ready to list with a realtor, then we should have a chat.
+                    <strong>If you don’t have the time, money or desire</strong>{" "}
+                    to get your home ready to list, we should have a chat.
                   </p>
                 </div>
               </div>
@@ -232,7 +249,8 @@ export default function AboutPage() {
                     className="w-5 h-5 mr-2 mt-1"
                   />
                   <p>
-                    <strong>We make it simple and easy</strong> to sell a home, without having to repair, update, clean, landscape, stage and show it.
+                    <strong>We make it simple and easy</strong> to sell a home without
+                    the hassle of repairs, cleaning, staging or showings.
                   </p>
                 </div>
               </div>
@@ -244,7 +262,8 @@ export default function AboutPage() {
                     className="w-5 h-5 mr-2 mt-1"
                   />
                   <p>
-                    <strong>Upon request, we’ve even bought homes sight unseen.</strong> Contact us today or fill out the form to have a chat about your house!
+                    <strong>We’ve even bought homes sight unseen.</strong> Contact us
+                    today or fill out the form to discuss your situation!
                   </p>
                 </div>
               </div>
@@ -256,7 +275,9 @@ export default function AboutPage() {
       {/* ===================== FAQ SECTION ===================== */}
       <section className="py-12 bg-[#0086bf]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">
+            Frequently Asked Questions
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div
               className="bg-white text-black rounded-md p-4 cursor-pointer"
@@ -267,7 +288,8 @@ export default function AboutPage() {
               </h3>
               {openIndex === 0 && (
                 <p className="text-sm">
-                  We charge zero fees at closing. All closing costs are covered by us.
+                  We charge zero fees at closing. All closing costs are covered by
+                  us.
                 </p>
               )}
             </div>
@@ -280,7 +302,8 @@ export default function AboutPage() {
               </h3>
               {openIndex === 1 && (
                 <p className="text-sm">
-                  Nope! Leave behind anything you don’t want. We’ll handle the rest.
+                  Nope! Leave behind anything you don’t want. We’ll handle the
+                  rest.
                 </p>
               )}
             </div>
@@ -293,7 +316,8 @@ export default function AboutPage() {
               </h3>
               {openIndex === 2 && (
                 <p className="text-sm">
-                  Absolutely. We encourage you to have any trusted advisor review the contract to ensure you’re comfortable.
+                  Absolutely. We encourage you to have a trusted advisor review
+                  the contract.
                 </p>
               )}
             </div>
@@ -306,7 +330,7 @@ export default function AboutPage() {
               </h3>
               {openIndex === 3 && (
                 <p className="text-sm">
-                  Not at all. We can close at the title company’s office, or even remotely in your own living room.
+                  Not at all. We can close at the title company’s office or remotely.
                 </p>
               )}
             </div>

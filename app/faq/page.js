@@ -53,35 +53,34 @@ export default function FAQPage() {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative h-[40vh]">
-        {/* Background Image */}
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/hero.jpg" // Replace with your hero image path
-            alt="FAQ Hero Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-        {/* Color Overlay */}
-        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        {/* Text Content */}
-        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-lg max-w-2xl text-white mb-6">
-            Learn more about selling your home for cash. Our goal is to make
-            the process quick, fair, and stress‑free so you can move forward
-            with confidence.
-          </p>
-          <Link href="/contact">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
-              Get an Offer
-            </button>
-          </Link>
-        </div>
-      </section>
+      {/* HERO SECTION */}
+<section className="relative h-[40vh]">
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-20">
+    <Image
+      src="/hero.jpg" // Replace with your hero image path
+      alt="FAQ Hero Background"
+      fill
+      className="object-cover"
+    />
+  </div>
+  {/* Color Overlay */}
+  <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
+  {/* Text Content */}
+  <div className="container mx-auto relative z-20 flex flex-col justify-center items-center sm:items-start h-full text-center sm:text-left px-4 sm:px-8 md:px-20">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+      Frequently Asked Questions
+    </h1>
+    <p className="text-base sm:text-lg md:text-xl max-w-2xl text-white mb-6">
+      Learn more about selling your home for cash. Our goal is to make the process quick, fair, and stress‑free so you can move forward with confidence.
+    </p>
+    <Link href="/contact">
+      <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base md:text-lg py-3 px-6 rounded-md transition duration-300">
+        Get an Offer
+      </button>
+    </Link>
+  </div>
+</section>
 
       {/* FAQ SECTION */}
       <section className="bg-[#f2fafc] py-10">

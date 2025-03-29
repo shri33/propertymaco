@@ -2,6 +2,7 @@
 import AnimatedPage from "@/app/components/common/AnimatedPage";
 import SEO from "@/app/components/common/SEO";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AccessibilityPage() {
   return (
@@ -12,7 +13,7 @@ export default function AccessibilityPage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[40vh]">
+      <section className="relative h-[40vh] md:h-[50vh] lg:h-[60vh]">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
@@ -24,9 +25,11 @@ export default function AccessibilityPage() {
         </div>
         {/* Blue Overlay */}
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-70"></div>
-        {/* Left-aligned white text overlay, vertically centered */}
-        <div className="absolute inset-0 flex items-center justify-start pl-48">
-          <h1 className="text-5xl font-bold text-white">Accessibility</h1>
+        {/* Hero Text Content */}
+        <div className="container mx-auto relative z-20 flex flex-col justify-center items-center sm:items-start h-full text-center sm:text-left px-4 sm:px-8 md:px-20">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+            Accessibility
+          </h1>
         </div>
       </section>
 
@@ -95,3 +98,4 @@ export default function AccessibilityPage() {
     </AnimatedPage>
   );
 }
+

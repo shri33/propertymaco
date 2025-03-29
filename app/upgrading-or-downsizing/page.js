@@ -13,33 +13,34 @@ export default function FreshStartPage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[60vh]">
-        {/* Background Image */}
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/hero.jpg" // Update with your hero image path
-            alt="Fresh Start Hero Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-        {/* Color Overlay */}
-        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        {/* Text Content */}
-        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Upgrading or Downsizing
-          </h1>
-          <p className="text-lg max-w-2xl text-white mb-8">
-            A Fresh Start When You Need It Most – Falling behind on mortgage payments is never a reflection of your worth. Whether you're facing job loss, unexpected medical expenses, or other financial hardships, PROPERTY MACO is here to help. We provide a straightforward way to relieve the burden of debt and secure your future—even if your home is not in perfect condition.
-          </p>
-          <Link href="/contact">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
-              Get an Offer
-            </button>
-          </Link>
-        </div>
-      </section>
+      {/* HERO SECTION */}
+<section className="relative h-[60vh]">
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-20">
+    <Image
+      src="/hero.jpg" // Update with your hero image path
+      alt="Fresh Start Hero Background"
+      fill
+      className="object-cover"
+    />
+  </div>
+  {/* Color Overlay */}
+  <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
+  {/* Text Content */}
+  <div className="container mx-auto relative z-20 flex flex-col justify-center items-center sm:items-start h-full text-center sm:text-left px-4 sm:px-8 md:px-20">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+      Upgrading or Downsizing
+    </h1>
+    <p className="text-base sm:text-lg md:text-xl max-w-2xl text-white mb-6">
+      A Fresh Start When You Need It Most – Falling behind on mortgage payments is never a reflection of your worth. Whether you're facing job loss, unexpected medical expenses, or other financial hardships, PROPERTY MACO is here to help. We provide a straightforward way to relieve the burden of debt and secure your future—even if your home is not in perfect condition.
+    </p>
+    <Link href="/contact">
+      <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base md:text-lg py-3 px-6 rounded-md transition duration-300">
+        Get an Offer
+      </button>
+    </Link>
+  </div>
+</section>
 
       {/* IMMEDIATE CASH OFFERS */}
       <section className="py-16 px-4 bg-white">

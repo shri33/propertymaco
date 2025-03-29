@@ -14,33 +14,34 @@ export default function BehindOnMortgagePage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[70vh]">
-        {/* Background Image */}
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/hero.jpg" // Update with your hero image
-            alt="Hero Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-        {/* Color Overlay */}
-        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        {/* Text Content */}
-        <div className="container mx-auto relative z-20 flex flex-col justify-center items-start h-full text-left px-4 sm:px-8 md:px-20">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Behind on Mortgage: Save Your Home from Foreclosure and Even Earn Extra Cash
-          </h1>
-          <p className="text-lg max-w-2xl text-white mb-8">
-            Challenging financial times can put homeowners under extreme stress, causing them to fall behind on regular mortgage payments. At PropertyMaco, we understand the severe impact that missed payments and the looming threat of foreclosure can have on your financial well‑being. Instead of facing credit damage and costly legal proceedings, you can turn to us for a fast, all‑cash offer on your home—allowing you to settle your mortgage and start fresh.
-          </p>
-          <Link href="/contact">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
-              Get an Offer
-            </button>
-          </Link>
-        </div>
-      </section>
+      {/* HERO SECTION */}
+<section className="relative h-[70vh]">
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-20">
+    <Image
+      src="/hero.jpg" // Update with your hero image path
+      alt="Hero Background"
+      fill
+      className="object-cover"
+    />
+  </div>
+  {/* Color Overlay */}
+  <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
+  {/* Text Content */}
+  <div className="container mx-auto relative z-20 flex flex-col justify-center items-center sm:items-start h-full text-center sm:text-left px-4 sm:px-8 md:px-20">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+      Behind on Mortgage: Save Your Home from Foreclosure and Even Earn Extra Cash
+    </h1>
+    <p className="text-base sm:text-lg md:text-xl max-w-2xl text-white mb-6">
+      Challenging financial times can put homeowners under extreme stress, causing them to fall behind on regular mortgage payments. Instead of facing credit damage and legal complications, you can turn to us for a fast, all‑cash offer.
+    </p>
+    <Link href="/contact">
+      <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-3 px-6 rounded-md transition duration-300">
+        Get an Offer
+      </button>
+    </Link>
+  </div>
+</section>
 
       {/* SECTION 1: Selling Your Home in Hard Times */}
       <section className="py-16 px-4 bg-white">
@@ -147,16 +148,13 @@ export default function BehindOnMortgagePage() {
           <div className="md:w-1/2 text-black">
             <h2 className="text-3xl font-bold mb-4">Take Control of Your Future</h2>
             <p className="mb-4">
-              Don’t let foreclosure ruin your financial future. By selling your home to PropertyMaco, you
-              can avoid long‑term credit damage, settle your mortgage balance, and potentially even secure
-              extra cash to help with your next steps. Contact our team today and let’s discuss how we can
-              turn a challenging situation into a fresh start.
+              Don’t let foreclosure ruin your financial future. By selling your home to PropertyMaco, you can avoid long‑term credit damage, settle your mortgage balance, and potentially even secure extra cash to help with your next steps. Contact our team today and let’s discuss how we can turn a challenging situation into a fresh start.
             </p>
           </div>
           {/* Image Column (Right) */}
           <div className="md:w-1/2">
             <Image
-              src="/take-control.jpg" // Replace with your actual image
+              src="/take-control.jpg" // Replace with your image
               alt="Take Control of Your Future"
               width={600}
               height={400}
@@ -169,12 +167,10 @@ export default function BehindOnMortgagePage() {
       {/* SECTION 5: The Process: Selling Your Home Fast */}
       <section className="py-16 px-4" style={{ backgroundColor: "#0086bf", color: "black" }}>
         <div className="container mx-auto text-center px-4 sm:px-8 md:px-20">
-          {/* Section Heading */}
           <h2 className="text-3xl font-bold mb-4">The Process: Selling Your Home Fast</h2>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
             At PropertyMaco, our goal is to make selling your home quick and hassle‑free. Our streamlined process consists of three simple steps:
           </p>
-          {/* Steps Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Step 1 */}
             <div className="bg-white rounded-lg p-6 shadow-md text-left">

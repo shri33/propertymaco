@@ -2,40 +2,37 @@
 import AnimatedPage from "@/app/components/common/AnimatedPage";
 import SEO from "@/app/components/common/SEO";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function InterpretationDefinitionsPage() {
   return (
     <AnimatedPage>
       <SEO
-        title="Interpretation and Definitions | PropertyMaco"
+        title="Privacy Policy | PropertyMaco"
         description="Learn the definitions and interpretation used in our Privacy Policy."
       />
 
       {/* HERO SECTION */}
-      <section className="relative h-[80vh]">
+      <section className="relative h-[70vh]">
         {/* Background Image */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/hero.jpg" // Replace with your desired image path
-            alt="Hero"
+            src="/hero.jpg" // Update with your hero image path
+            alt="Interpretation & Definitions Hero Background"
             fill
             className="object-cover"
           />
         </div>
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-70"></div>
-        {/* Left-aligned white text overlay, vertically centered */}
-        <div className="absolute inset-0 flex items-center justify-start pl-48">
-          <div>
-            <h1 className="text-5xl font-bold text-white mb-4">Privacy Policy</h1>
-            <p className="text-lg text-white max-w-3xl">
-              Last updated: March 20, 2025
-              <br /><br />
-              This Privacy Policy describes our policies and procedures regarding the collection, use, and disclosure of your information when you access and use our Service, and it outlines your privacy rights and how the law protects you.
-              <br /><br />
-              By using our Service, you agree to the collection and use of your personal data in accordance with this Privacy Policy.
-            </p>
-          </div>
+        {/* Color Overlay */}
+        <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
+        {/* Hero Text Content */}
+        <div className="container mx-auto relative z-20 flex flex-col justify-center items-center sm:items-start h-full text-center sm:text-left px-4 sm:px-8 md:px-20">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          Privacy Policy
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-white mb-6 max-w-2xl">
+            Understand the key terms and definitions used in our Privacy Policy to help you navigate our services with clarity.
+          </p>
         </div>
       </section>
 
@@ -76,7 +73,7 @@ export default function InterpretationDefinitionsPage() {
             </li>
             <li>
               <span className="text-green-500 font-bold mr-2">✓</span>
-              <strong>Country:</strong> Florida, United States.
+              <strong>Country:</strong> United States.
             </li>
             <li>
               <span className="text-green-500 font-bold mr-2">✓</span>
@@ -112,3 +109,4 @@ export default function InterpretationDefinitionsPage() {
     </AnimatedPage>
   );
 }
+

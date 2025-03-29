@@ -146,7 +146,9 @@ const ReviewCarousel = ({ reviews }) => {
   const startIndex = currentSlide * 4;
   let currentReviews = reviews.slice(startIndex, startIndex + 4);
   if (currentReviews.length < 4) {
-    currentReviews = currentReviews.concat(reviews.slice(0, 4 - currentReviews.length));
+    currentReviews = currentReviews.concat(
+      reviews.slice(0, 4 - currentReviews.length)
+    );
   }
 
   // Toggle full text vs snippet
@@ -222,12 +224,12 @@ export default function ReviewsPage() {
         title="Reviews | PropertyMaco"
         description="Read real testimonials from homeowners who sold their properties to PropertyMaco."
       />
-      {/* HERO SECTION */}
+      {/* ===================== HERO SECTION ===================== */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative h-[30vh] text-white py-8 px-4 overflow-hidden"
+        className="relative h-[30vh] flex items-center justify-start text-white py-8 px-4 overflow-hidden"
       >
         <div className="absolute inset-0 -z-20">
           <Image
@@ -238,16 +240,19 @@ export default function ReviewsPage() {
           />
         </div>
         <div className="absolute inset-0 -z-10 bg-[#0086bf] opacity-90"></div>
-        <div className="container mx-auto relative z-10 text-left pl-4 sm:pl-10 pr-4 sm:pr-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Reviews</h1>
-          <p className="text-lg max-w-2xl">
-            See what our customers have to say about their experience with PropertyMaco.
-            Discover genuine reviews from homeowners who sold their houses quickly and hassle-free.
+        <div className="container mx-auto relative z-10 text-left px-4 sm:px-10">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white">
+            Reviews
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl text-white">
+            See what our customers have to say about their experience with
+            PropertyMaco. Discover genuine reviews from homeowners who sold
+            their houses quickly and hassle-free.
           </p>
         </div>
       </motion.section>
 
-      {/* VIDEO REVIEWS SECTION */}
+      {/* ===================== VIDEO REVIEWS SECTION ===================== */}
       <section className="pt-16 pb-8 px-4 bg-white">
         <div className="container mx-auto text-center">
           <motion.h2
@@ -260,7 +265,10 @@ export default function ReviewsPage() {
             Video Reviews
           </motion.h2>
           <p className="text-lg mb-8 text-black max-w-4xl mx-auto">
-            We are the only home buyer with dozens of video reviews featuring ACTUAL homeowners talking about their experience selling to us. There are truly no fees or commissions, and we buy houses AS-IS, so there are definitely no repairs (or even cleaning) needed.
+            We are the only home buyer with dozens of video reviews featuring ACTUAL
+            homeowners talking about their experience selling to us. There are
+            truly no fees or commissions, and we buy houses AS-IS, so there are
+            definitely no repairs (or even cleaning) needed.
           </p>
           <div className="mx-auto max-w-7xl rounded-lg overflow-hidden shadow-lg">
             <div className="aspect-video">
@@ -277,7 +285,7 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      {/* REVIEWS CAROUSEL SECTION */}
+      {/* ===================== REVIEWS CAROUSEL SECTION ===================== */}
       <section className="py-8 px-4 bg-white">
         <div className="container mx-auto text-center">
           <div className="mx-auto max-w-7xl rounded-lg overflow-hidden shadow-lg px-4 py-6 bg-white">
