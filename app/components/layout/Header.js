@@ -4,7 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  // Separate state variables for desktop and mobile dropdowns
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const desktopDropdownRef = useRef(null);
@@ -16,13 +18,13 @@ export default function Header() {
         desktopDropdownRef.current &&
         !desktopDropdownRef.current.contains(event.target)
       ) {
-        setDropdownOpen(false);
+        setDesktopDropdownOpen(false);
       }
       if (
         mobileDropdownRef.current &&
         !mobileDropdownRef.current.contains(event.target)
       ) {
-        setDropdownOpen(false);
+        setMobileDropdownOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -42,7 +44,7 @@ export default function Header() {
   return (
     <header className="bg-black shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 xl:px-8">
-        {/* Mobile Header (below md) */}
+        {/* Mobile Header (below md) - Second Design */}
         <div className="flex md:hidden items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -79,9 +81,8 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Tablet Header (md to < xl) - iPad Pro at 1024px width will use this */}
+        {/* Tablet Header (md to < xl) */}
         <div className="hidden md:flex xl:hidden items-center justify-between py-4">
-          {/* Tablet Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/Logo.png"
@@ -92,7 +93,6 @@ export default function Header() {
               className="w-40 h-auto border border-white"
             />
           </Link>
-          {/* Tablet Navigation */}
           <nav className="flex items-center space-x-4">
             <Link
               href="/about-us"
@@ -117,13 +117,13 @@ export default function Header() {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    setDropdownOpen((prev) => !prev);
+                    setDesktopDropdownOpen((prev) => !prev);
                   }}
                   className="focus:outline-none"
                 >
                   <svg
                     className={`w-4 h-4 text-white transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180" : "rotate-0"
+                      desktopDropdownOpen ? "rotate-180" : "rotate-0"
                     }`}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -139,14 +139,14 @@ export default function Header() {
                   </svg>
                 </button>
               </div>
-              {dropdownOpen && (
+              {desktopDropdownOpen && (
                 <div className="absolute left-0 mt-2 w-48 bg-black border border-gray-700 rounded-md shadow-lg z-50">
                   <ul className="py-2">
                     {dropdownItems.map((item) => (
                       <li key={item.link}>
                         <Link
                           href={item.link}
-                          onClick={() => setDropdownOpen(false)}
+                          onClick={() => setDesktopDropdownOpen(false)}
                           className="block px-4 py-2 text-white hover:bg-blue-500 text-sm"
                         >
                           {item.name}
@@ -168,7 +168,6 @@ export default function Header() {
 
         {/* Desktop Header (xl and up) */}
         <div className="hidden xl:flex items-center justify-between py-4">
-          {/* Desktop Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/Logo.png"
@@ -179,7 +178,6 @@ export default function Header() {
               className="w-48 h-auto border border-white"
             />
           </Link>
-          {/* Desktop Navigation */}
           <nav className="flex items-center space-x-6">
             <Link
               href="/about-us"
@@ -216,13 +214,13 @@ export default function Header() {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    setDropdownOpen((prev) => !prev);
+                    setDesktopDropdownOpen((prev) => !prev);
                   }}
                   className="focus:outline-none"
                 >
                   <svg
                     className={`w-4 h-4 text-white transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180" : "rotate-0"
+                      desktopDropdownOpen ? "rotate-180" : "rotate-0"
                     }`}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -238,14 +236,14 @@ export default function Header() {
                   </svg>
                 </button>
               </div>
-              {dropdownOpen && (
+              {desktopDropdownOpen && (
                 <div className="absolute left-0 mt-2 w-56 bg-black border border-gray-700 rounded-md shadow-lg z-50">
                   <ul className="py-2">
                     {dropdownItems.map((item) => (
                       <li key={item.link}>
                         <Link
                           href={item.link}
-                          onClick={() => setDropdownOpen(false)}
+                          onClick={() => setDesktopDropdownOpen(false)}
                           className="block px-4 py-2 text-white hover:bg-blue-500 text-sm"
                         >
                           {item.name}
@@ -285,30 +283,34 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu (opened via hamburger) */}
+      {/* Mobile Navigation Menu (opened via hamburger) - Second Design */}
       {mobileNavOpen && (
         <nav className="md:hidden bg-black px-4 py-4 transition-all duration-300">
           <div className="flex flex-col space-y-4">
             <Link
               href="/about-us"
+              onClick={() => setMobileNavOpen(false)}
               className="text-white hover:text-blue-400 text-lg transition-colors"
             >
               About Us
             </Link>
             <Link
               href="/our-team"
+              onClick={() => setMobileNavOpen(false)}
               className="text-white hover:text-blue-400 text-lg transition-colors"
             >
               Our Team
             </Link>
             <Link
               href="/reviews"
+              onClick={() => setMobileNavOpen(false)}
               className="text-white hover:text-blue-400 text-lg transition-colors"
             >
               Reviews
             </Link>
             <Link
               href="/locations"
+              onClick={() => setMobileNavOpen(false)}
               className="text-white hover:text-blue-400 text-lg transition-colors"
             >
               Locations
@@ -317,6 +319,7 @@ export default function Header() {
               <div className="flex items-center space-x-1">
                 <Link
                   href="/we-buy-houses"
+                  onClick={() => setMobileNavOpen(false)}
                   className="text-white hover:text-blue-400 text-lg transition-colors"
                 >
                   We Buy Houses
@@ -324,13 +327,13 @@ export default function Header() {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    setDropdownOpen((prev) => !prev);
+                    setMobileDropdownOpen((prev) => !prev);
                   }}
                   className="focus:outline-none"
                 >
                   <svg
                     className={`w-4 h-4 text-white transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180" : "rotate-0"
+                      mobileDropdownOpen ? "rotate-180" : "rotate-0"
                     }`}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -346,13 +349,16 @@ export default function Header() {
                   </svg>
                 </button>
               </div>
-              {dropdownOpen && (
+              {mobileDropdownOpen && (
                 <div className="mt-2">
                   {dropdownItems.map((item) => (
                     <Link
                       key={item.link}
                       href={item.link}
-                      onClick={() => setDropdownOpen(false)}
+                      onClick={() => {
+                        setMobileDropdownOpen(false);
+                        setMobileNavOpen(false);
+                      }}
                       className="block px-4 py-2 text-white hover:bg-blue-500 text-sm"
                     >
                       {item.name}
@@ -382,6 +388,7 @@ export default function Header() {
               </div>
               <Link
                 href="/contact"
+                onClick={() => setMobileNavOpen(false)}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium text-center transition-colors"
               >
                 GET AN OFFER
