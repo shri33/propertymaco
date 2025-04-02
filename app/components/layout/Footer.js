@@ -72,7 +72,7 @@ export default function Footer() {
             <div className="space-y-2">
               <p className="text-xs sm:text-sm">
                 <a
-                  href="https://propertymaco.h.trustco.ai"
+                  href="sms:2399905070"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:opacity-80"
@@ -83,7 +83,7 @@ export default function Footer() {
               <p className="text-xs sm:text-sm">
                 Messaging T&Cs:{" "}
                 <a
-                  href="https://propertymaco.h.trustco.ai/#termsArea"
+                  href="sms:2399905070"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:opacity-80"
@@ -94,8 +94,8 @@ export default function Footer() {
               <p className="text-xs sm:text-sm">
                 Messaging Privacy Policy:{" "}
                 <a
-                  href="https://propertymaco.h.trustco.ai/#privacyArea"
-                  target=" "
+                  href="sms:2399905070"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:opacity-80"
                 >
@@ -114,11 +114,7 @@ export default function Footer() {
                   About Us
                 </span>
               </Link>
-              <Link href="/reviews">
-                <span className="text-xs sm:text-sm block hover:underline cursor-pointer">
-                  Reviews
-                </span>
-              </Link>
+              {/* Reviews link removed */}
               <Link href="/we-buy-houses">
                 <span className="text-xs sm:text-sm block hover:underline cursor-pointer">
                   We Buy Houses

@@ -1,7 +1,6 @@
 "use client";
 import AnimatedPage from "@/app/components/common/AnimatedPage";
 import SEO from "@/app/components/common/SEO";
-import ContactForm from "@/app/components/common/ContactForm";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,7 +34,7 @@ export default function ContactPage() {
             Ready to explore your options and reclaim your financial freedom? Our team is here to answer your questions and guide you every step of the way.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-white mb-4">
-            Call Us Today: <span className="font-bold">(239) 990-5070 ,  Email: Info@PropertyMaco.com </span>
+            Call Us Today: <span className="font-bold">(239) 990-5070, Email: Info@PropertyMaco.com</span>
           </p>
           <p className="text-base sm:text-lg md:text-xl text-white mb-4">
             Get In Touch: Use our online form or chat feature on our website to start a conversation.
@@ -43,7 +42,8 @@ export default function ContactPage() {
           <p className="text-base sm:text-lg md:text-xl text-white mb-6">
             Don’t let financial stress hold you back any longer. Reach out now and let The Friendly Home Buyer help you take the first step toward a fresh start.
           </p>
-          <Link href="/contact">
+          {/* When clicked, this button navigates to the contact form page */}
+          <Link href="/contact-form">
             <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base md:text-lg py-3 px-6 rounded-md transition duration-300">
               Get in Touch
             </button>

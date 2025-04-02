@@ -126,7 +126,12 @@ export default function LocationsPage() {
                   d="M3 5h2l3.6 7.59a1 1 0 01-.21 1.09l-2.79 2.79a11.05 11.05 0 005.3 5.3l2.79-2.79a1 1 0 011.09-.21L19 19v2a1 1 0 01-1 1C9.94 22 2 14.06 2 4a1 1 0 011-1h2z"
                 />
               </svg>
-              <span className="text-lg font-semibold">(888) 713-9158</span>
+              <a
+                href="tel:2399905070"
+                className="text-lg font-semibold hover:underline"
+              >
+                (239) 990-5070
+              </a>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-red-600"
@@ -250,3 +255,4 @@ export default function LocationsPage() {
     </AnimatedPage>
   );
 }
+

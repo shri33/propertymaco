@@ -276,7 +276,7 @@ export default function WeBuyHousesPage() {
       WE BUY HOUSES
     </h1>
     <p className="text-base sm:text-lg md:text-xl max-w-2xl text-white mb-8">
-      Looking to sell your house fast in Florida? The Friendly Home Buyer offers a straightforward, stress‑free solution for homeowners. We buy houses quickly, regardless of their situation.
+      Looking to sell your house fast in Nationwide? WE offers a straightforward, stress‑free solution for homeowners. We buy houses quickly, regardless of their situation.
     </p>
     <Link href="/contact">
       <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-3 px-4 sm:px-6 rounded-md transition duration-300">

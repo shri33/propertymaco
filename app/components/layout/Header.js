@@ -4,11 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-  // Separate state variables for desktop and mobile dropdowns
+  // State for dropdowns and mobile navigation
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
+  // Separate refs for desktop and mobile dropdowns
   const desktopDropdownRef = useRef(null);
   const mobileDropdownRef = useRef(null);
 
@@ -44,7 +45,7 @@ export default function Header() {
   return (
     <header className="bg-black shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 xl:px-8">
-        {/* Mobile Header (below md) - Second Design */}
+        {/* Mobile Header */}
         <div className="flex md:hidden items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -81,7 +82,7 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Tablet Header (md to < xl) */}
+        {/* Tablet Header */}
         <div className="hidden md:flex xl:hidden items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -94,17 +95,18 @@ export default function Header() {
             />
           </Link>
           <nav className="flex items-center space-x-4">
+            {/* Home Button */}
+            <Link
+              href="/"
+              className="text-white hover:text-blue-400 text-base transition-colors"
+            >
+              Home
+            </Link>
             <Link
               href="/about-us"
               className="text-white hover:text-blue-400 text-base transition-colors"
             >
               About Us
-            </Link>
-            <Link
-              href="/our-team"
-              className="text-white hover:text-blue-400 text-base transition-colors"
-            >
-              Our Team
             </Link>
             <div className="relative" ref={desktopDropdownRef}>
               <div className="flex items-center space-x-1">
@@ -157,16 +159,17 @@ export default function Header() {
                 </div>
               )}
             </div>
+            {/* GET OFFER Button */}
             <Link
               href="/contact"
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium text-base transition-colors"
             >
-              GET AN OFFER
+              GET OFFER
             </Link>
           </nav>
         </div>
 
-        {/* Desktop Header (xl and up) */}
+        {/* Desktop Header */}
         <div className="hidden xl:flex items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -179,23 +182,18 @@ export default function Header() {
             />
           </Link>
           <nav className="flex items-center space-x-6">
+            {/* Home Button */}
+            <Link
+              href="/"
+              className="text-white hover:text-blue-400 text-lg transition-colors"
+            >
+              Home
+            </Link>
             <Link
               href="/about-us"
               className="text-white hover:text-blue-400 text-lg transition-colors"
             >
               About Us
-            </Link>
-            <Link
-              href="/our-team"
-              className="text-white hover:text-blue-400 text-lg transition-colors"
-            >
-              Our Team
-            </Link>
-            <Link
-              href="/reviews"
-              className="text-white hover:text-blue-400 text-lg transition-colors"
-            >
-              Reviews
             </Link>
             <Link
               href="/locations"
@@ -254,11 +252,18 @@ export default function Header() {
                 </div>
               )}
             </div>
+            {/* GET OFFER Button */}
+            <Link
+              href="/contact"
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium text-lg transition-colors"
+            >
+              GET OFFER
+            </Link>
             <div className="flex items-center space-x-4">
               <div className="text-right">
                 <p className="text-blue-400 text-xs">Available 24/7</p>
                 <div className="flex items-center">
-                  <a href="tel:2399905070" className="flex items-center">
+                  <Link href="tel:2399905070" className="flex items-center">
                     <Image
                       src="/phone-icon.png"
                       alt="Phone Icon"
@@ -269,44 +274,32 @@ export default function Header() {
                     <p className="text-red-500 font-bold text-sm">
                       (239) 990-5070
                     </p>
-                  </a>
+                  </Link>
                 </div>
               </div>
-              <Link
-                href="/contact"
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium text-sm transition-colors"
-              >
-                GET AN OFFER
-              </Link>
             </div>
           </nav>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu (opened via hamburger) - Second Design */}
+      {/* Mobile Navigation Menu */}
       {mobileNavOpen && (
         <nav className="md:hidden bg-black px-4 py-4 transition-all duration-300">
           <div className="flex flex-col space-y-4">
+            {/* Home Button */}
+            <Link
+              href="/"
+              onClick={() => setMobileNavOpen(false)}
+              className="text-white hover:text-blue-400 text-lg transition-colors"
+            >
+              Home
+            </Link>
             <Link
               href="/about-us"
               onClick={() => setMobileNavOpen(false)}
               className="text-white hover:text-blue-400 text-lg transition-colors"
             >
               About Us
-            </Link>
-            <Link
-              href="/our-team"
-              onClick={() => setMobileNavOpen(false)}
-              className="text-white hover:text-blue-400 text-lg transition-colors"
-            >
-              Our Team
-            </Link>
-            <Link
-              href="/reviews"
-              onClick={() => setMobileNavOpen(false)}
-              className="text-white hover:text-blue-400 text-lg transition-colors"
-            >
-              Reviews
             </Link>
             <Link
               href="/locations"
@@ -369,11 +362,8 @@ export default function Header() {
             </div>
             <div className="flex flex-col space-y-3">
               <div className="text-center">
-                <p className="text-blue-400 text-sm">Available 24/7</p>
-                <a
-                  href="tel:2399905070"
-                  className="flex items-center justify-center"
-                >
+                <p className="text-blue-600 text-sm">Available 24/7</p>
+                <Link href="tel:2399905070" className="flex items-center justify-center">
                   <Image
                     src="/phone-icon.png"
                     alt="Phone Icon"
@@ -384,14 +374,14 @@ export default function Header() {
                   <p className="text-red-500 font-bold text-base">
                     (239) 990-5070
                   </p>
-                </a>
+                </Link>
               </div>
+              {/* GET OFFER Button */}
               <Link
                 href="/contact"
-                onClick={() => setMobileNavOpen(false)}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium text-center transition-colors"
               >
-                GET AN OFFER
+                GET OFFER
               </Link>
             </div>
           </div>
