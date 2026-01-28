@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "framer-motion": "^12.5.0",
-    "next": "15.2.8",
+    "next": "16.1.5",
     "nodemailer": "^6.10.0",
     "propertymaco": "file:",
     "react": "^19.0.0",
